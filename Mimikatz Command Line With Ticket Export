@@ -1,0 +1,45 @@
+title: Mimikatz Command Line With Ticket Export
+description: Detection of well-known mimikatz command line arguments. Added more commandline indicators from referenced rule by author - Teymur Kheirkhabarov, oscd.community
+author: thedfirreport
+date: 2021/01/18
+references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+    - https://github.com/Neo23x0/sigma/blob/master/rules/windows/process_creation/win_mimikatz_command_line.yml    
+tags:
+    - attack.credential_access
+    - attack.t1003
+    - attack.t1003.001
+    - attack.t1003.002
+    - attack.t1003.004
+    - attack.t1003.005
+    - attack.t1003.006
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_1:
+        CommandLine|contains:
+            - DumpCreds
+            - invoke-mimikatz
+            - mimikatz
+    selection_2:
+        CommandLine|contains:
+            - rpc
+            - token
+            - crypto
+            - dpapi
+            - sekurlsa
+            - kerberos
+            - lsadump
+            - privilege
+            - process
+            - export
+            - tickets
+    selection_3:
+        CommandLine|contains:
+            - '::'
+    condition: selection_1 or selection_2 and selection_3
+falsepositives:
+    - Legitimate Administrator using tool for password recovery
+level: medium
+status: experimental
