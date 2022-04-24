@@ -1,0 +1,27 @@
+title: QBot scheduled task REGSVR32 with C$ image path 
+id: 014da553-5727-4e47-9544-56da83b3eb6f
+description: Detects the creation of Scheduled Task with REGSVR32 (regsvr32.exe) and C$ in the image path field
+status: test
+author: tas_kmanager, TheDFIRReport
+references:https://thedfirreport.com/2022/02/07/qbot-likes-to-move-it-move-it/
+date: 2022/02/06
+modified: 2022/02/06
+logsource:
+product: windows
+service: system
+detection:
+selection:
+Provider_Name: 'Service Control Manager'
+EventID: 7045
+ImagePath|contains|all: 
+- 'regsvr32.exe'
+- 'C$'
+condition: selection
+level: high
+falsepositives:
+- low
+tags:
+- attack.persistence
+- attack.privilege_escalation
+- attack.t1053.005
+- qbot
