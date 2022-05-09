@@ -1,6 +1,6 @@
-title: Using powershell specific download cradle OneLiner
+title: Custom Cobalt Strike Execution
 status: Experimental
-description: Detects the execution of a specific OneLiner to download and execute powershell modules in memory.
+description: Detects the execution of a specific OneLiner to Invoke PowerShell commands.
 author: \@Kostastsale, \@TheDFIRReport
 references:
 - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
@@ -16,8 +16,7 @@ Image|endswith:
 CommandLine|contains|all:
 - 'http://127.0.0.1'
 - '%{(IRM $_)}'
-- '.SubString.ToString()[67,72,64]-Join'
-- 'Import-Module'
+- 'Invoke'
 condition: selection1
 falsepositives:
 - Uknown
