@@ -1,7 +1,7 @@
 title: Enabling restricted admin mode
 status: Experimental
 description: Detects the registry modification to enable restricted admin mode using reg.exe
-author: \@Kostastsale, \@TheDFIRReport
+author: '@Kostastsale, @TheDFIRReport'
 references: 
   - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
 date: 2022/05/09
