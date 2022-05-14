@@ -1,0 +1,51 @@
+title: AdFind Discovery
+description: AdFind has been seen in numerous intrusions. The threat actor(s) ran these commands.
+author: 'The DFIR Report, @thedfirreport'
+date: 2022/5/14
+references:
+    - https://thedfirreport.com/2020/05/08/adfind-recon/
+    - https://thedfirreport.com/?s=adfind
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine|contains:
+            - 'adfind -gcb -sc trustdmp'
+            - 'adfind -f "(objectcategory=group)"'
+            - 'adfind -f (objectcategory=group)'
+            - 'adfind -subnets -f (objectCategory=subnet)'
+            - 'adfind -sc trustdmp'
+            - 'adfind -f "(objectcategory=organizationalUnit)"'
+            - 'adfind -f (objectcategory=organizationalUnit)'
+            - 'adfind -f "objectcategory=computer"'
+            - 'adfind -f objectcategory=computer'
+            - 'adfind -f "(objectcategory=person)"'
+            - 'adfind -f (objectcategory=person)'
+    renamed:
+        CommandLine|contains:
+            - '-gcb -sc trustdmp'
+            - '-f "(objectcategory=group)"'
+            - '-f (objectcategory=group)'
+            - '-subnets -f (objectCategory=subnet)'
+            - '-sc trustdmp'
+            - '-f "(objectcategory=organizationalUnit)"'
+            - '-f (objectcategory=organizationalUnit)'
+            - '-f "objectcategory=computer"'
+            - '-f objectcategory=computer'
+            - '-f "(objectcategory=person)"'
+            - '-f (objectcategory=person)'
+    condition: 1 of selection or 1 of renamed
+falsepositives:
+    - Legitimate Administrator using tool for Active Directory querying.
+level: medium
+status: Stable
+tags:
+    - attack.remote_system_discovery
+    - attack.domain_trust_discovery
+    - attack.T1018
+    - attack.T1482
+    - attack.TT1482
+    - attack.T1069.002
+    - attack.T1087.002
+    - attack.s0552
