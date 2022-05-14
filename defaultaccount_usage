@@ -1,0 +1,24 @@
+title: DefaultAccount Usage
+description: Threat actor (APT35) created user, enabled it, set password, add to admins and remote desktop users.
+author: 'The DFIR Report, @thedfirreport'
+date: 2022/5/14
+references:
+    - https://thedfirreport.com/2022/03/21/apt35-automates-initial-access-using-proxyshell/
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_1:
+        CommandLine|contains:
+            - 'net user /add DefaultAccount'
+            - 'net user DefaultAccount /active:yes'
+            - 'net localgroup Administrators /add DefaultAccount'
+            - "net localgroup 'Remote Desktop Users' /add DefaultAccount"
+    condition: 1 of selection_1
+falsepositives:
+    - Legitimate Administrator activity
+level: medium
+status: experiemntal
+tags:
+    - attack.t1136
+    - attack.t1136.001
