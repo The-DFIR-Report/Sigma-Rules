@@ -1,4 +1,4 @@
-title: Enable WDigest using PowerShell
+title: Enable WDigest using PowerShell (ps_module)
 id: c677394a-1e3e-4ab5-a6a8-295bf0b71137
 description: Rule to detect registry modifications to enable WDigest using powershell script modules.
 status: experimental
