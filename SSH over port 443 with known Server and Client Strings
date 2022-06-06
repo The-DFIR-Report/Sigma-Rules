@@ -1,0 +1,24 @@
+title: SSH over port 443 with known Server and Client Strings
+status: Experimental
+description: Will detect the presence of known SSH client and SSH server strings that have been used for SSH tunneling.
+author: \@iiamaleks,\@TheDFIRReport
+date: 2022/06/06
+references:
+  - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
+logsource:
+  product: zeek
+  service: ssh
+detection:
+  port:
+    destination_port: 443
+  ssh_client:
+    zeek_ssh_client: "SSH-2.0-PuTTY_Release_0.76"
+  ssh_server:
+    zeek_ssh_server: "SSH-2.0-9.17 FlowSsh: Bitvise SSH Server (WinSSHD) 9.17"
+  condition: port and ssh_client and ssh_server
+falsepositives:
+  - Unknown
+level: high
+tags:
+  - attack.protocol_tunneling
+  - attack.t1572
