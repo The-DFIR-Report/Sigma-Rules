@@ -1,4 +1,4 @@
-title: Set Enable WDigest using PowerShell
+title: Enable WDigest using PowerShell
 id: bda01c73-45bc-4997-8c63-f993ec08e87e
 status: experimental
 description: Rule to detect registry modifications to enable WDigest using powershell over the commandline.
