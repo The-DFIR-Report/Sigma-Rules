@@ -1,0 +1,34 @@
+title: SplashTop Network
+id: 53d94914-971a-4326-a3d6-b11e0d409914
+status: Experimental
+description: Detects use of SplashTop
+author: _pete_0, TheDFIRReport
+references:
+  - https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/212724303-Why-does-the-Splashtop-software-show-unable-to-reach-Splashtop-servers-
+  - https://thedfirreport.com/2022/04/04/stolen-images-campaign-ends-in-conti-ransomware/
+date: 2022/05/06
+modified: 2022/05/06
+logsource:
+  category: dns_query
+  product: windows
+detection:
+  selection:
+    QueryName|contains:
+      - '.splashtop.com'
+      - '.splashtop.eu'
+    Image|endswith:
+      - '\spupnp.exe'
+      - '\Dataproxy.exe'
+      - '\SRServer.exe'
+      - '\SRFeature.exe'
+      - '\SSUService.exe'
+      - '\strwinclt.exe'
+  condition: selection
+falsepositives:
+  - Legitimate SplashTop installation
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1133
+  - attack.command_and_control
+  - attack.t1219

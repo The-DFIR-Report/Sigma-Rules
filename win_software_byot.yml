@@ -1,0 +1,34 @@
+title: Operator Bring Your Own Tools
+id: dee0aaa1-b7d7-4be0-ac30-2add7b88d259
+status: Experimental
+description: Detects use of custom scripts i.e. BAT files.
+author: _pete_0, TheDFIRReport
+references:
+  - https://thedfirreport.com/
+modified: 2022/06/10
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains:
+      - adf.bat
+      - adfind.bat
+      - locker.bat
+      - kill.bat
+      - def.bat
+      - start.bat
+      - shadow.bat
+      - logdelete.bat
+      - closeapps.bat
+    Image|endswith:
+      - '\cmd.exe'
+  condition: selection
+fields:
+  - CommandLine
+falsepositives:
+  - Admin tools
+level: high
+tags:
+  - attack.command_and_control
+  - attack.t1105

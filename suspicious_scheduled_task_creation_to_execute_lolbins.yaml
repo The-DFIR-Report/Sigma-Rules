@@ -1,0 +1,27 @@
+title: Suspicious Scheduled Task Creation to execute LOLbins
+id: e4cae9a5-49a8-46ab-b223-87565b849e64                                                                                                                                                                                                                                                        
+status: experimental                                                                                                                                                                                                                                                                                                       
+description:                                                                                                                                                                                                                                                                                                               
+author: yatinwad and TheDFIRReport                                                                                                                                                                                                                                                                                         
+tags:
+    - attack.persistence
+    - attack.t1053.005
+references:
+    - https://redcanary.com/threat-detection-report/techniques/scheduled-task/
+    - https://thedfirreport.com/2021/10/18/icedid-to-xinglocker-ransomware-in-24-hours/
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection:
+        Image|endswith: 'schtasks.exe'
+        CommandLine|contains: '/create '
+    filter:
+        CommandLine|contains:
+                             - 'regsvr32.exe'
+                             - 'rundll32.exe'
+    condition: selection and 1 of filter
+falsepositives:
+    - Administrative activity
+    - Software installation
+level: medium
