@@ -4,7 +4,7 @@ status: Experimental
 description: Detects abuse of mofcomp to load WMI classes i.e. to create WMI event subscriptions
 author: _pete_0, TheDFIRReport
 references:
-  - https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-
+  - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
 date: 2022/07/11
 modified: 2022/07/11
 logsource:
