@@ -1,0 +1,34 @@
+title: Suspicious Commands by SQL Server
+description: Detects suspicious commands created from sqlservr process.
+status: experimental
+author: @TheDFIRReport
+references:
+    - 
+date: 2022/07/11
+modified: 2022/07/11
+tags:
+    - attack.initial_access
+    - attack.persistence
+    - attack.privilege_escalation
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        ParentImage|endswith: '\sqlservr.exe'
+        Image|endswith:
+            - '\cmd.exe'
+        CommandLine|contains:
+            -  'del'
+            -  'cacls'
+            -  'attrib +s +h'
+            -  'takeown'
+            -  'taskkill'
+            -  'net'
+            -  'reg add'
+            -  'echo'
+            -  'cscript'
+            -  'whoami'
+            -  'netsh'
+    condition: selection
+level: high
