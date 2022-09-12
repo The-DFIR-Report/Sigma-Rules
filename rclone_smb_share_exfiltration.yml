@@ -1,0 +1,22 @@
+title: Rclone SMB Share Exfiltration
+id: 889bc648-5164-44f4-9388-fb5d6b58a7b2 
+status: Experimental
+description: Detection of a exfiltration activity using rclone from Windows network shares using SMB.
+author: \@TheDFIRReport
+date: 2022/09/12
+references:
+  - https://thedfirreport.com/
+logsource:
+  product: zeek
+  service: smb_files
+detection:
+  selection:
+    file_name|endswith:
+      - '\rclone.exe'
+  condition: selection
+falsepositives:
+  - Approved business backup processes.
+level: medium
+tags:
+  - attack.exfiltration
+  - attack.t567.002

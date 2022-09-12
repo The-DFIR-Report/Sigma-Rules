@@ -1,0 +1,34 @@
+title: AteraAgent malicious installations
+id: fb0f2d48-269d-473e-9afc-c540a16a990f
+description: Detects potentially malicious AteraAgent installations when the IntegratorLogin parameter is used to register a non-business email. 
+status: experimental
+date: 2022/09/12
+author: '@kostastsale, @TheDFIRReport'
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection1:
+        Image: 
+          - '*\AteraAgent.exe'
+        CommandLine|contains|all:
+          - '/i '
+          - 'IntegratorLogin='
+    selection2:
+        CommandLine|contains:
+        # Feel free to modify the email addresses to fit your needs
+          - '@gmail.com'
+          - '@hotmail.com'
+          - '@hotmail.com'
+          - '@yandex.ru'
+          - '@mail.ru'
+          - '@outlook.com'
+          - '@protonmail.com'
+          - '@dropmail.me'
+    condition: selection1 and selection2
+falsepositives:
+    - Unlikely
+level: high
+tags:
+    - attack.execution
+    - attack.T1059.006
