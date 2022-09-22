@@ -1,0 +1,27 @@
+title: Bumblebee WmiPrvSE execution pattern
+id: 1620db43-fde5-45f3-b4d9-45ca6e79e047
+status: Experimental
+description: Detects Bumblebee WmiPrvSE parent process manipulation 
+author:  TheDFIRReport
+references:
+  - https://thedfirreport.com/
+date: 2022/09/22
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_image:
+    Image|endswith:
+      - 'ImagingDevices.exe'
+      - 'wabmig.exe'
+  selection_parent:
+    ParentImage:endswith:
+      - 'WmiPrvSE.exe'
+  condition: selection_image and selection_parent
+falsepositives:
+  - Unknown
+level: high
+tags:
+  - attack.defense_evasion
+  - attack.t1036
+
