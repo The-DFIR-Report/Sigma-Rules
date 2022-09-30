@@ -1,4 +1,5 @@
 title: Suspicious Commands by SQL Server
+id: 9a73f4cc-a727-4b26-a9d8-81d2724b7f5e
 description: Detects suspicious commands created from sqlservr process.
 status: experimental
 author: @TheDFIRReport
