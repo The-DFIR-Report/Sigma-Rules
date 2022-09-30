@@ -1,4 +1,5 @@
 title: Deleting Windows Defender scheduled tasks
+id: 2a6239f4-fefa-4080-adba-196f8006b54e
 status: Experimental
 description: Detects the deletion of scheduled tasks related to Windows Defender.
 author: '@Kostastsale, @TheDFIRReport'
