@@ -1,4 +1,5 @@
 title: Scheduled task executing powershell encoded payload from registry
+id: 16e0c76d-dbe9-461b-afce-ced21d819b29
 status: Experimental
 description: Detects the creation of a schtask that executes a base64 encoded payload stored in the Windows Registry using PowerShell.
 author: '@Kostastsale, @TheDFIRReport'
