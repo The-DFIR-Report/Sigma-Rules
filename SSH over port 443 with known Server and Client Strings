@@ -1,4 +1,5 @@
 title: SSH over port 443 with known Server and Client Strings
+id: 3c5791a2-8f29-413d-b511-90918ecb33b7
 status: Experimental
 description: Will detect the presence of known SSH client and SSH server strings that have been used for SSH tunneling.
 author: \@iiamaleks,\@TheDFIRReport

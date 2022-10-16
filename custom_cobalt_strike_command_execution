@@ -1,4 +1,5 @@
 title: Custom Cobalt Strike Command Execution
+id: 782de568-fadb-4e7f-b89a-64247a606830
 status: Experimental
 description: Detects the execution of a specific OneLiner to Invoke PowerShell commands.
 author: '@Kostastsale, @TheDFIRReport'

@@ -1,4 +1,5 @@
 title: Mimikatz Command Line With Ticket Export
+id: 48e1dd43-c42f-4b3b-9011-a0ea1fab6b03
 description: Detection of well-known mimikatz command line arguments. Added more commandline indicators from referenced rule by author - Teymur Kheirkhabarov, oscd.community
 author: thedfirreport
 date: 2021/01/18

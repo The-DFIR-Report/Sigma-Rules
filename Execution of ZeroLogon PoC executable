@@ -1,4 +1,5 @@
 title: Execution of ZeroLogon PoC executable
+id: fe0c3029-c6df-4f0b-9b82-e4ca4b9659f0
 status: Experimental
 description: Detects the execution of the commonly used ZeroLogon PoC executable.
 author: '@Kostastsale, @TheDFIRReport'

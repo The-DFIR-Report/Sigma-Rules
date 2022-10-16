@@ -1,4 +1,5 @@
 title: Exchange Webshell creation
+id: 3086329b-245b-4b91-a0f7-bed9b5438cf6
 description: These commands were used to create a webshell by exploiting ProxyShell vulnerabilities
 author: 'The DFIR Report, @thedfirreport'
 date: 2022/5/14

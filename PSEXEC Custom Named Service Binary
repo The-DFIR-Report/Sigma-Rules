@@ -1,4 +1,5 @@
 title: PSEXEC Custom Named Service Binary
+id: 752956d6-cf16-43f5-a8ca-b82f968e458d
 status: experimental
 description: PSEXEC execututed with non default service binary name
 references:

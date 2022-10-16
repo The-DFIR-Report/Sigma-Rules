@@ -1,4 +1,5 @@
 title: DefaultAccount Usage
+id: dca5d253-d738-4ec4-b530-381ece784d42
 description: Threat actor (APT35) created user, enabled it, set password, add to admins and remote desktop users.
 author: 'The DFIR Report, @thedfirreport'
 date: 2022/5/14
