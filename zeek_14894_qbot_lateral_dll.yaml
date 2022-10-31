@@ -1,0 +1,25 @@
+title: Potential Qbot SMB DLL Lateral Movement
+id: 3eaa2cee-2dfb-46e9-98f6-3782aab30f38
+status: Experimental
+description: Detection of potential us of SMB to transfer DLL's into the C$ folder of hosts unique to Qbot malware for purposes of lateral movement.
+author: \@TheDFIRReport
+date: 2022/09/12
+references:
+  - https://thedfirreport.com/2022/10/31/follina-exploit-leads-to-domain-compromise/
+logsource:
+  product: zeek
+  service: smb_files
+detection:
+  selection_1:
+    zeek_smb_files_path|endswith:
+      - 'C$'
+  selection_2:
+    file_name|endswith:
+      - '\.dll.cfg'
+  condition: selection_1 and selection_2
+falsepositives:
+  - RMM Tools and Administrative activities in C$ Share.
+level: medium
+tags:
+  - attack.lateral_movement
+  - attack.t1570
