@@ -1,6 +1,6 @@
 title: Rclone SMB Share Exfiltration
 id: 889bc648-5164-44f4-9388-fb5d6b58a7b2 
-status: Experimental
+status: experimental
 description: Detection of a exfiltration activity using rclone from Windows network shares using SMB.
 author: \@TheDFIRReport
 date: 2022/09/12

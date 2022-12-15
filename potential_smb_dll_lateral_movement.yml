@@ -1,6 +1,6 @@
 title: Potential SMB DLL Lateral Movement
 id: 8fe1524e-8c97-404c-9dee-090929a315c4 
-status: Experimental
+status: experimental
 description: Detection of potential us of SMB to transfer DLL's into the ProgramData folder of hosts for purposes of lateral movement.
 author: \@TheDFIRReport
 date: 2022/09/12

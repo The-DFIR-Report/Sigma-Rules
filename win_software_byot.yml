@@ -1,6 +1,6 @@
 title: Operator Bring Your Own Tools
 id: dee0aaa1-b7d7-4be0-ac30-2add7b88d259
-status: Experimental
+status: experimental
 description: Detects use of custom scripts i.e. BAT files.
 author: _pete_0, TheDFIRReport
 references:

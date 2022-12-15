@@ -1,6 +1,6 @@
 title: SplashTop Network
 id: 53d94914-971a-4326-a3d6-b11e0d409914
-status: Experimental
+status: experimental
 description: Detects use of SplashTop
 author: _pete_0, TheDFIRReport
 references:

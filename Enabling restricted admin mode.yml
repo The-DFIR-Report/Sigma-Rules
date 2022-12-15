@@ -1,6 +1,6 @@
 title: Enabling restricted admin mode
 id: 8e9de57d-7c2e-4ce7-8f5d-56e9f1de475f
-status: Experimental
+status: experimental
 description: Detects the registry modification to enable restricted admin mode using reg.exe
 author: '@Kostastsale, @TheDFIRReport'
 references: 

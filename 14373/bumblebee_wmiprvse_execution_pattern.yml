@@ -1,6 +1,6 @@
 title: Bumblebee WmiPrvSE execution pattern
 id: 1620db43-fde5-45f3-b4d9-45ca6e79e047
-status: Experimental
+status: experimental
 description: Detects Bumblebee WmiPrvSE parent process manipulation 
 author:  TheDFIRReport
 references:

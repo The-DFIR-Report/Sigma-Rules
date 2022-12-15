@@ -36,7 +36,7 @@ detection:
             - '-f objectcategory=computer'
             - '-f "(objectcategory=person)"'
             - '-f (objectcategory=person)'
-    condition: 1 of them
+    condition: selection or renamed
 falsepositives:
     - Legitimate Administrator using tool for Active Directory querying.
 level: medium
