@@ -40,7 +40,7 @@ detection:
 falsepositives:
     - Legitimate Administrator using tool for Active Directory querying.
 level: medium
-status: Stable
+status: stable
 tags:
     - attack.remote_system_discovery
     - attack.domain_trust_discovery

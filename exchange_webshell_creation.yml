@@ -23,7 +23,7 @@ detection:
 falsepositives:
     - Legitimate Administrator activity
 level: medium
-status: experiemntal
+status: experimental
 tags:
     - attack.t1100
     - attack.t1190
