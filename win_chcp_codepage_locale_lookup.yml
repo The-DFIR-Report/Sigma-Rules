@@ -1,6 +1,6 @@
 title: CHCP CodePage Locale Lookup
 id: dfbdd206-6cf2-4db9-93a6-0b7e14d5f02f
-status: Experimental
+status: experimental
 description: Detects use of chcp to look up the system locale value as part of host discovery
 author: _pete_0, TheDFIRReport
 references:

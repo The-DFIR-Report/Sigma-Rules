@@ -1,6 +1,6 @@
 title: Webshell Usage with ManageEngine Product
 id: c1717e0b-e364-4032-bb8e-1bd112ba4058
-status: Experimental
+status: experimental
 description: Detection of a webshell in a ManageEngine internet accessible directory.
 author: \@iiamaleks,\@TheDFIRReport
 date: 2022/06/06

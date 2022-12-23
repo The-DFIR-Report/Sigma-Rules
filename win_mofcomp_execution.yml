@@ -1,6 +1,6 @@
 title: MOFComp Execution
 id: fd7aed23-7585-44fb-9920-5da82c740e6e
-status: Experimental
+status: experimental
 description: Detects abuse of mofcomp to load WMI classes i.e. to create WMI event subscriptions
 author: _pete_0, TheDFIRReport
 references:

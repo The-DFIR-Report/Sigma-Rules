@@ -1,6 +1,6 @@
 title: Operator Bloopers Cobalt Strike Commands
 id: f127a4d7-5246-4e22-aa8d-a97d05e4f1a7
-status: Experimental
+status: experimental
 description: Detects use of Cobalt Strike commands accidentally entered in the CMD shell
 author: _pete_0, TheDFIRReport
 references:

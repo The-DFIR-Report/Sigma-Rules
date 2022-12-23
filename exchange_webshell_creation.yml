@@ -3,6 +3,7 @@ id: 3086329b-245b-4b91-a0f7-bed9b5438cf6
 description: These commands were used to create a webshell by exploiting ProxyShell vulnerabilities
 author: 'The DFIR Report, @thedfirreport'
 date: 2022/5/14
+modified: 2022/12/16
 references:
     - https://thedfirreport.com/2022/03/21/apt35-automates-initial-access-using-proxyshell/
 logsource:
@@ -18,11 +19,11 @@ detection:
             - '-FilePath "\\localhost\C$'
             - '-IncludeFolders ("#Drafts#")'
             - 'aspx'
-    condition: 1 of them
+    condition: selection_1 or selection_2
 falsepositives:
     - Legitimate Administrator activity
 level: medium
-status: experiemntal
+status: experimental
 tags:
     - attack.t1100
     - attack.t1190

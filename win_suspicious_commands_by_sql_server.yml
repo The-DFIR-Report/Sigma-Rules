@@ -2,11 +2,11 @@ title: Suspicious Commands by SQL Server
 id: 9a73f4cc-a727-4b26-a9d8-81d2724b7f5e
 description: Detects suspicious commands created from sqlservr process.
 status: experimental
-author: @TheDFIRReport
+author: '@TheDFIRReport'
 references:
     - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver
 date: 2022/07/11
-modified: 2022/07/11
+modified: 2022/12/16
 tags:
     - attack.initial_access
     - attack.persistence

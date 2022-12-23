@@ -1,6 +1,6 @@
 title: AnyDesk Network
 id: b26feb0b-8891-4e66-b2e7-ec91dc045d58
-status: Experimental
+status: experimental
 description: Detects use of AnyDesk
 author: _pete_0, TheDFIRReport
 references:
