@@ -1,0 +1,30 @@
+title: Emotet Child Process Spawn Pattern
+id: 50e8cf53-62df-49aa-bbde-8b3a0a6d8a35
+status: Experimental
+description: Detects Emotet Spawning ipconfig and systeminfo. 
+author:  TheDFIRReport
+references:
+  - https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/
+  - Case 15184
+date: 2022/10/03
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_image:
+    CommandLine:
+      - 'ipconfig /all'
+      - 'systeminfo'
+  selection_parent:
+    ParentImage|endswith:
+      - 'regsvr32.exe'
+  selection_parent_cmdline:
+    ParentCommandLine|contains:
+      - '.dll'
+  condition: selection_image and selection_parent and selection_parent_cmdline
+falsepositives:
+  - Unknown
+level: high
+tags:
+  - attack.discovery
+  - attack.t1087
