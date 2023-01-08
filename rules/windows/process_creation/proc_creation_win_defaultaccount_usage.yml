@@ -1,9 +1,9 @@
 title: Default Account Usage
 id: dca5d253-d738-4ec4-b530-381ece784d42
 description: Threat actor (APT35) created user, enabled it, set password, add to admins and remote desktop users.
-author: 'The DFIR Report, @thedfirreport'
+author: 'The DFIR Report'
 date: 2022/5/14
-modified: 2022/12/16
+modified: 2023/01/08
 references:
     - https://thedfirreport.com/2022/03/21/apt35-automates-initial-access-using-proxyshell/
 logsource:

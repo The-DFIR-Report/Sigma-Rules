@@ -4,8 +4,9 @@ status: experimental
 description: PSEXEC execututed with non default service binary name
 references:
     - thedfirreport.com
-author: '@TheDFIRReport'
+author: 'TheDFIRReport'
 date: 2022/04/24
+modified: 2023/01/08
 logsource:
     product: windows
     category: process_creation

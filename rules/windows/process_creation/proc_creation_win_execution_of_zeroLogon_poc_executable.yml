@@ -2,11 +2,12 @@ title: Execution of ZeroLogon PoC executable
 id: fe0c3029-c6df-4f0b-9b82-e4ca4b9659f0
 status: experimental
 description: Detects the execution of the commonly used ZeroLogon PoC executable.
-author: '@Kostastsale, @TheDFIRReport'
+author: 'Kostastsale, TheDFIRReport'
 references: 
   - https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/
   - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
 date: 2022/02/12
+modified: 2023/01/08
 logsource:
   product: windows
   category: process_creation

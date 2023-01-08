@@ -1,9 +1,9 @@
 title: Exchange Webshell creation
 id: 3086329b-245b-4b91-a0f7-bed9b5438cf6
 description: These commands were used to create a webshell by exploiting ProxyShell vulnerabilities
-author: 'The DFIR Report, @thedfirreport'
+author: 'The DFIR Report'
 date: 2022/5/14
-modified: 2022/12/16
+modified: 2023/01/08
 references:
     - https://thedfirreport.com/2022/03/21/apt35-automates-initial-access-using-proxyshell/
 logsource:
