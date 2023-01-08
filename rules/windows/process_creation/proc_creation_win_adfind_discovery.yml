@@ -1,8 +1,9 @@
 title: AdFind Discovery
 id: 50046619-1037-49d7-91aa-54fc92923604
 description: AdFind has been seen in numerous intrusions. The threat actor(s) ran these commands.
-author: 'The DFIR Report, @thedfirreport'
+author: 'The DFIR Report'
 date: 2022/5/14
+modified: 2023/01/08
 references:
     - https://thedfirreport.com/2020/05/08/adfind-recon/
     - https://thedfirreport.com/?s=adfind
