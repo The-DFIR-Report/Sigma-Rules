@@ -1,0 +1,29 @@
+title: Mshta Executing from Registry
+id: 8f6de20d-0616-4cf1-875e-24ccabb2e78c
+status: Experimental
+description: Detects a Mshta executing code from the registry
+author: TheDFIRReport
+references:
+  - https://lolbas-project.github.io/lolbas/Binaries/Mshta/
+  - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
+date: 2023/01/08
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains|all:
+      - 'wscript.shell'
+      - 'new ActiveXObject'
+      - 'regread'
+    Image|endswith:
+      - 'mshta.exe'
+  condition: selection
+fields:
+  - CommandLine
+falsepositives:
+  - Unknown
+level: high
+tags:
+  - attack.defense_evasion
+  - attack.t1218.005
