@@ -1,0 +1,32 @@
+title: Driverquery Lookup
+id: 94751fb0-d329-4d3f-ae80-2b8b268e925f
+status: Experimental
+description: Detects use of driverquery to look up the installed and configured drivers as part of host discovery
+author: _pete_0, TheDFIRReport
+references:
+  - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/driverquery
+  - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
+date: 2023/01/08
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith:
+      - '\driverquery.exe'
+    CommandLine|contains:
+      - 'driverquery'
+    ParentImage|endswith:
+      - '\cmd.exe'
+    ParentCommandLine|contains:
+      - '/c'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+falsepositives:
+  - Administrators, helpdesk
+level: high
+tags:
+  - attack.discovery
+  - attack.t1082
