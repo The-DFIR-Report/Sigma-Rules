@@ -5,7 +5,7 @@ description: |
     Indicates potential use of Invoke-ShareFinder via windows logging
 references:
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
-    - https://thedfirreport.com/2023/01/22/sharefinder-how-threat-actors-discover-file-shares
+    - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares
 
 author: TheDFIRReport
 date: 01/22/2023
