@@ -1,0 +1,30 @@
+title: Windows Builtin Invoke-ShareFinder Discovery
+id: 831f3313-8b3c-49ce-9ad8-0a3d9969dd82
+status: experimental
+description: |
+    Indicates potential use of Invoke-ShareFinder via windows logging
+references:
+    - https://powersploit.readthedocs.io/en/stable/Recon/README/
+    - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares
+
+author: TheDFIRReport
+date: 01/22/2023
+
+tags:
+    - attack.discovery
+    - attack.t1135
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 5145
+        ShareName|endswith: 
+            #- $IPC Too likely to result in false positive hits due to normal behavior
+            - \C$
+            - \ADMIN$
+    timeframe: 30s
+    condition: selection | count(ShareName) by src_address > 30
+falsepositives:
+    - Network share auditing or vunlerability scanning systems
+level: low

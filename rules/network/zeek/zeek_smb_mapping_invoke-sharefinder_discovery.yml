@@ -1,0 +1,29 @@
+title: Zeek Invoke-ShareFinder SMB Mapping
+id: a3ca36fe-b1be-46ab-8247-c30a82f9eb5a
+status: experimental
+description: |
+    Indicates potential use of Invoke-ShareFinder via zeek smb logging
+references:
+    - https://powersploit.readthedocs.io/en/stable/Recon/README/
+    - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares
+
+author: TheDFIRReport
+date: 01/22/2023
+
+tags:
+    - attack.discovery
+    - attack.t1135
+logsource:
+    product: zeek
+    service: smb_mapping
+detection:
+    selection:
+        path|endswith:
+            #- \$IPC Too likely to result in false positive hits due to normal behavior
+            - \$C
+            - \$ADMIN 
+    timeframe: 30s
+    condition: selection | count(path) by src_ip > 30
+falsepositives:
+    - Network share auditing or vunlerability scanning systems
+level: medium
