@@ -1,0 +1,37 @@
+title: Renamed Autohotkey Binary
+id: 141c8cd8-ef88-45c4-8891-ea41a72d3d17
+status: experimental
+description: Detects the execution of a renamed binary often used by attackers or malware leveraging new Sysmon OriginalFileName datapoint.
+references:
+    - https://attack.mitre.org/techniques/T1036/
+    - https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/
+author: TheDFIRReport
+date: 2023/02/05
+
+tags:
+    - attack.defense_evasion
+    - attack.t1036.003
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_v1:
+        OriginalFileName:
+            - 'AutoHotkey.exe'
+    selection_v2:
+        Product|contains:
+           - 'AutoHotkey' 
+    filter:
+        Image|endswith:
+            - '\AutoHotkey.exe'
+            - '\AutoHotkeyA32.exe'
+            - '\AutoHotkeyU32.exe'
+            - '\AutoHotkeyU64.exe'
+            - '\AutoHotkey32.exe'
+            - '\AutoHotkey64.exe'
+            - '\AutoHotkey32_UIA.exe'
+            - '\AutoHotkey64_UIA.exe'
+    condition: 1 of selection_* and not filter
+falsepositives:
+    - Unknown
+level: medium
