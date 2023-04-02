@@ -5,8 +5,9 @@ description: Detects querying of Windows Security log for account activity
 author: _pete_0, TheDFIRReport
 references:
   - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
-date: 2023/02/20
-modified: 2023/02/20
+  - https://thedfirreport.com/2023/04/03/malicious-iso-file-leads-to-domain-wide-ransomware
+date: 2023/04/02
+modified: 2023/04/02
 logsource:
   category: process_creation
   product: windows

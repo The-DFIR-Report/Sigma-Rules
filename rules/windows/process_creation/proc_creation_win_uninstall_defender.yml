@@ -5,8 +5,9 @@ description: Detects use of Windows Uninstall defender feature
 author: _pete_0, TheDFIRReport
 references:
   - https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/microsoft-defender-antivirus-on-windows-server?view=o365-worldwide
-date: 2023/02/21
-modified: 2023/02/21
+  - https://thedfirreport.com/2023/04/03/malicious-iso-file-leads-to-domain-wide-ransomware
+date: 2023/04/02
+modified: 2023/04/02
 logsource:
   category: process_creation
   product: windows
