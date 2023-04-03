@@ -1,0 +1,28 @@
+title: Uninstall Windows Feature - Defender
+id: 3f2f0cf4-c2c2-4633-8f1c-58a0485f0237
+status: Experimental
+description: Detects use of Windows Uninstall defender feature
+author: _pete_0, TheDFIRReport
+references:
+  - https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/microsoft-defender-antivirus-on-windows-server?view=o365-worldwide
+  - https://thedfirreport.com/2023/04/03/malicious-iso-file-leads-to-domain-wide-ransomware
+date: 2023/04/02
+modified: 2023/04/02
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|all:
+    - '*uninstall-windowsfeature*'
+    - '*Windows-Defender-GUI*'
+    Image|endswith:
+      - '\powershell.exe'
+  condition: all of selection
+fields:
+  - CommandLine
+falsepositives:
+  - Unknown
+level: high
+tags:
+  - attack.t1562.001
