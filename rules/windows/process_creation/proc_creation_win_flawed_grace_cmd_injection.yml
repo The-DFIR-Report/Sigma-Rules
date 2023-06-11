@@ -1,0 +1,32 @@
+title: FlawedGrace spawning threat injection target
+id: 295e71e5-38c9-4a59-90dd-9fa7bf617b4b
+description: Detecting the command FlawedGrace is using for the purpose of injecting into it the spawned process, in this case the cmd.exe process.
+status: experimental
+date: 2023/06/12
+author: "@kostastsale, @TheDFIRReport"
+references:
+    - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection1:
+        Image|endswith:
+            - '\cmd.exe'
+        CommandLine|contains|all:
+            - ' /I '
+            - ' /SI '
+    selection2:
+        Image|endswith:
+            - '\cmd.exe'
+        CommandLine|contains|all:
+            - ' /O '
+            - ' /SO '   
+    condition: selection1 or selection2
+falsepositives:
+    - Unknown
+level: high
+tags:
+    - attack.attack.defense_evasion #TA0005
+    - attack.T1631
+    - dist.public

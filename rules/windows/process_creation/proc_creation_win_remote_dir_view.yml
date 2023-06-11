@@ -1,0 +1,25 @@
+title: Viewing remote directories
+id: bca1fab7-5640-489d-a161-e154fb6ba4f8
+description: Detecting the use of dir command to inspect directories on the remote host.
+status: experimental
+date: 2023/06/12
+author: "@kostastsale, @TheDFIRReport"
+references:
+    - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|endswith:
+            - 'cmd.exe'
+        CommandLine|contains:
+            - 'dir *\\*\c$\*>>'
+    condition: selection
+falsepositives:
+    - Possible administrator activity
+level: high
+tags:
+    - attack.discovery #TA0007
+    - attack.T1083
+    - dist.public
