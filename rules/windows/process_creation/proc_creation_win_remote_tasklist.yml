@@ -1,0 +1,25 @@
+title: List remote processes using tasklist
+id: 80a56507-6778-4d04-8346-320a70358f2c
+description: Detecting the use of tasklist to display processes of remote hosts using the /S parameter.
+status: experimental
+date: 2023/06/12
+author: "@kostastsale, @TheDFIRReport"
+references:
+    - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection1:
+        Image|endswith:
+            - '\tasklist.exe'
+        CommandLine|contains:
+            - ' /S '
+    condition: selection1
+falsepositives:
+    - Administrative activity
+level: low
+tags:
+    - attack.discovery #TA0007
+    - attack.T1057
+    - dist.public

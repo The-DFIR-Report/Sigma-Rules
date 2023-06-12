@@ -1,0 +1,24 @@
+title: Nullsoft Scriptable Installer Script (NSIS) execution
+id: b95288d8-020a-4df0-95cb-d2d3a806ab11
+description: Detects the creation of the NSIS System plugin library, indicative of an NSIS script execution.
+status: experimental
+date: 2023/06/12
+author: "Maxime THIEBAUT (@0xThiebaut), @TheDFIRReport"
+references:
+    - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out
+    - https://nsis.sourceforge.io/Docs/System/System.html
+logsource:
+    category: file_event
+    product: windows
+detection:
+    selection1:
+        TargetFilename|contains: '\Temp\ns'
+        TargetFilename|endswith: '.tmp\System.dll'
+    condition: selection1
+falsepositives:
+    - Legitimate NSIS installers (e.g., Razer Chroma, Pulse Secure, ...)
+level: low
+tags:
+    - attack.execution #TA0002
+    - attack.T1106
+    - dist.public
