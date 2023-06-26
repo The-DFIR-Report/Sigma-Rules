@@ -47,7 +47,6 @@ tags:
     - attack.domain_trust_discovery
     - attack.T1018
     - attack.T1482
-    - attack.TT1482
     - attack.T1069.002
     - attack.T1087.002
     - attack.s0552
