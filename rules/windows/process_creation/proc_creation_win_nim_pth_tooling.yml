@@ -1,0 +1,40 @@
+title: NIM Pass The Hash Tooling Detection
+id: d938de18-7f57-4c9c-93b9-a621c746d594
+description: Detection of NIM Tooling that Creates a Remote User (pth_createusers.exe) and Adds them to Local Admins group (pth_addadmin.exe)
+author: 'The DFIR Report'
+date: 2023/10/27
+modified: 2023/10/27
+references:
+    - https://thedfirreport.com/2023/10/30/netsupport-intrusion-results-in-domain-compromise
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    option_ip:
+        CommandLine|contains:
+            - '-i '
+            - '--ip'
+    option_domain:
+        CommandLine|contains:
+            - '-d '
+            - '--domain'
+    option_username:
+        CommandLine|contains:
+            - '-u '
+            - '--username'
+    hash_value1: # The --hash can be used to pass the hash paramter.
+        CommandLine|contains:
+            - '--hash'
+    parent:
+        ParentImage|endswith:
+            - '\powershell.exe'
+            - '\cmd.exe'
+    hash_value_re:
+        CommandLine|re: '[a-f0-9]{32}'
+    condition: 1 of option_* and hash_value1 and hash_value_re and parent
+falsepositives:
+    - uknown
+level: high
+status: experimental
+tags:
+    - attack.t1136
