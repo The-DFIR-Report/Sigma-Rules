@@ -8,7 +8,7 @@ references:
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
 
 author: TheDFIRReport
-date: 01/23/2023
+date: 2023/01/23
 
 tags:
     - attack.discovery
