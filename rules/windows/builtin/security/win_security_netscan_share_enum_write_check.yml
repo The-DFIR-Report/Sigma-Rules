@@ -1,0 +1,29 @@
+title: NetScan Share Enumeration Write Access Check
+id: 8a0d153f-b4e4-4ea7-9335-892dfbe17221
+status: Experimental
+description: Detects the creation of unique artifacts created by SoftPerfect NetScan when performing write-access checking on enumerated network shares
+author: "@pcscout, @TheDFIRReport"
+date: 2024/01/27
+references:
+    - https://thedfirreport.com/2024/01/29/buzzing-on-christmas-eve-trigona-ransomware-in-3-hours/
+    - https://www.softperfect.com.cach3.com/board/read.php%3F12,10134,12202.html
+    - https://content.vectra.ai/hubfs/downloadable-assets/RansomOps-Post-Incident-Report.pdf
+tags:
+    - attack.discovery
+    - attack.t1135
+    - dist.public
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 5145
+        RelativeTargetName: 'delete.me'
+        AccessMask: 
+            - '0x2'
+            - '0x130196'
+        ObjectType: File
+    condition: selection
+falsepositives:
+    - Unknown
+level: medium
