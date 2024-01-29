@@ -5,7 +5,7 @@ description: Detects the creation of unique artifacts created by SoftPerfect Net
 author: "@pcscout, @TheDFIRReport"
 date: 2024/01/27
 references:
-    - https://thedfirreport.com
+    - https://thedfirreport.com/2024/01/29/buzzing-on-christmas-eve-trigona-ransomware-in-3-hours/
     - https://www.softperfect.com.cach3.com/board/read.php%3F12,10134,12202.html
     - https://content.vectra.ai/hubfs/downloadable-assets/RansomOps-Post-Incident-Report.pdf
 tags:
