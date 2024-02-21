@@ -8,7 +8,7 @@ references:
 date: 2022/06/05
 tags:
     - attack.discovery
-    - t1012
+    - attack.t1012
 logsource:
     category: process_creation
     product: windows
