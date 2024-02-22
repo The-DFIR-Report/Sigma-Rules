@@ -20,4 +20,4 @@ falsepositives:
 level: medium
 tags:
   - attack.exfiltration
-  - attack.t567.002
+  - attack.t1567.002

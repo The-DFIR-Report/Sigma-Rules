@@ -28,5 +28,5 @@ falsepositives:
     - System administrator activities
 level: medium
 tags:
-    - attack.hidden.users
-    - attack.T1564.002
+    - attack.t1564.002
+    - attack.defense_evasion

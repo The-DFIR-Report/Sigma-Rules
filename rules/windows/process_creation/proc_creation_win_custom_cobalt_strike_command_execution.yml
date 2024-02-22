@@ -21,10 +21,10 @@ detection:
       - 'Invoke'
   condition: selection1
 falsepositives:
-  - Uknown
+  - Unknown
 level: high
 tags:
   - attack.defense_evasion
   - attack.t1562.001
   - attack.execution
-  - T1059.001
+  - attack.t1059.001

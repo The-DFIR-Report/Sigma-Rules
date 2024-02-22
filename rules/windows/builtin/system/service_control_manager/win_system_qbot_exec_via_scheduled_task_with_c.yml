@@ -25,5 +25,3 @@ tags:
   - attack.persistence
   - attack.privilege_escalation
   - attack.t1053.005
-  - attack.S0650
-  - attack.qbot

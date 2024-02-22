@@ -13,9 +13,9 @@ logsource:
   product: windows
 detection:
   selection:
-    CommandLine|all:
-    - '*uninstall-windowsfeature*'
-    - '*Windows-Defender-GUI*'
+    CommandLine|contains:
+    - 'uninstall-windowsfeature'
+    - 'Windows-Defender-GUI'
     Image|endswith:
       - '\powershell.exe'
   condition: all of selection

@@ -22,5 +22,5 @@ falsepositives:
   - Unknown
 level: high
 tags:
-  - attack.protocol_tunneling
+  - attack.command_and_control
   - attack.t1572

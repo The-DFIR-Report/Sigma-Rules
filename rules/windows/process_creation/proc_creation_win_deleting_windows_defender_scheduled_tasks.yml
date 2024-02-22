@@ -19,7 +19,7 @@ detection:
       - 'Windows Defender'
   condition: selection1
 falsepositives:
-  - Uknown
+  - Unknown
 level: high
 tags:
   - attack.defense_evasion

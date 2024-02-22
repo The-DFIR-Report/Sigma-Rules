@@ -9,8 +9,8 @@ logsource:
     product: windows
 detection:
     selection1:
-        Image: 
-          - '*\AteraAgent.exe'
+        Image|endswith: 
+          - '\AteraAgent.exe'
         CommandLine|contains|all:
           - '/i '
           - 'IntegratorLogin='
@@ -31,4 +31,4 @@ falsepositives:
 level: high
 tags:
     - attack.execution
-    - attack.T1059.006
+    - attack.t1059.006

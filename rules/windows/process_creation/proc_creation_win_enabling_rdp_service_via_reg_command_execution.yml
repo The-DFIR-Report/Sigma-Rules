@@ -40,7 +40,7 @@ detection:
       - 'fSingleSessionPerUser'
   condition: selection1 and ((Winstations1 and Winstations2) or (selection2 or selection3))
 falsepositives:
-  - Uknown
+  - Unknown
 level: high
 tags:
   - attack.defense_evasion

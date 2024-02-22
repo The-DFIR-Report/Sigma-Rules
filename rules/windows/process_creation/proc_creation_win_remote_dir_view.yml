@@ -21,5 +21,5 @@ falsepositives:
 level: high
 tags:
     - attack.discovery #TA0007
-    - attack.T1083
+    - attack.t1083
     - dist.public
