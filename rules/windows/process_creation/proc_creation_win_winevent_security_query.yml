@@ -6,17 +6,17 @@ author: _pete_0, TheDFIRReport
 references:
   - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
   - https://thedfirreport.com/2023/04/03/malicious-iso-file-leads-to-domain-wide-ransomware
-date: 2023/04/02
-modified: 2023/04/02
+date: 2023-04-02
+modified: 2024-02-23
 logsource:
   category: process_creation
   product: windows
 detection:
   selection:
-    CommandLine|all:
-    - '*get-eventlog*'
-    - '*security*'
-    - '*export-csv*'
+    CommandLine|contains:
+    - 'get-eventlog'
+    - 'security'
+    - 'export-csv'
     Image|endswith:
       - '\powershell.exe'
   condition: all of selection

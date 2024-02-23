@@ -5,7 +5,8 @@ description: Detects use of custom scripts i.e. BAT files.
 author: _pete_0, TheDFIRReport
 references:
   - https://thedfirreport.com/
-modified: 2022/06/10
+date: 2022-06-10
+modified: 2024-02-23
 logsource:
   category: process_creation
   product: windows

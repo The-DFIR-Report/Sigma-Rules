@@ -6,8 +6,8 @@ author: 'Kostastsale, TheDFIRReport'
 references:
   - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
   - https://gist.github.com/mgeeky/3b11169ab77a7de354f4111aa2f0df38
-date: 2022/05/09
-modified: 2023/01/08
+date: 2022-05-09
+modified: 2024-02-23
 logsource:
   product: windows
   category: process_creation
@@ -21,10 +21,10 @@ detection:
       - 'Invoke'
   condition: selection1
 falsepositives:
-  - Uknown
+  - Unknown
 level: high
 tags:
   - attack.defense_evasion
   - attack.t1562.001
   - attack.execution
-  - T1059.001
+  - attack.t1059.001

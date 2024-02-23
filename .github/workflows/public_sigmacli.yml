@@ -1,0 +1,52 @@
+#Testing workflow to validate public Sigma rules.
+
+name: Sigma-cli CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events but only for the "main" branch
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Installs Sigma-cli on runner
+      - name: Install Sigmacli
+        run: python -m pipx install sigma-cli
+      # Install Sigma-cli plugins
+      - name: Sigmacli Plugins
+        run: sigma plugin install splunk microsoft365defender sysmon elasticsearch
+      # Install jq tool
+      - name: Install jq
+        run: sudo apt-get install jq -y
+      # Runs Sigma-cli checks
+      - name: Run Sigma Cli
+        run: sigma check ${{ github.workspace }}/rules
+      # Runs checks for DFIR Reprot tasks
+      - name: DFIR Report Checks
+        run: ${{ github.workspace }}/tests/public-rule-tests.sh -d ${{ github.workspace }}/rules
+      # Run Conversion for Elastic
+      - name: Elastic Rule Conversion
+        run: git show --name-only | grep "rules" | xargs  sigma convert -t elasticsearch -p sysmon -p ecs_windows -f siem_rule_ndjson | tail -n1 | jq . | egrep -v "related_integrations|required_fields|setup" | sed s/"SIGMA"/"DFIR Public Ruleset"/g | jq -c .
+      # Run Conversion for Splunk
+      - name: Splunk Rule Conversion
+        run: git show --name-only | grep "rules" | xargs  sigma convert -t splunk  -p splunk_windows 
+      # Run Conversion for MDATP
+      - name: MDATP Rule Conversion
+        run: git show --name-only | grep "rules" | xargs  sigma convert -t microsoft_defender -p microsoft_365_defender
+      # Run Conversion for Qradar **Currently plugin is broke with latest sigmacli
+#      - name: Qradar Rule Conversion
+#        run: git show --name-only | grep "rules/sigma" | xargs  sigma convert -t -p

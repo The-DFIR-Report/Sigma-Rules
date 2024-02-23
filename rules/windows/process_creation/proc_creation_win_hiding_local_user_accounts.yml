@@ -5,7 +5,8 @@ status: experimental
 references:
     - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
 author: 'Kostastsale, TheDFIRReport'
-date: 2022/07/11
+date: 2022-07-11
+modified: 2024-02-23
 logsource:
     category: process_creation
     product: windows
@@ -28,5 +29,5 @@ falsepositives:
     - System administrator activities
 level: medium
 tags:
-    - attack.hidden.users
-    - attack.T1564.002
+    - attack.t1564.002
+    - attack.defense_evasion
