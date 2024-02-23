@@ -5,8 +5,8 @@ description: Detects the process creation from Scheduled Task with REGSVR32 (reg
 author: tas_kmanager, TheDFIRReport
 references: 
     - https://thedfirreport.com/2022/02/07/qbot-likes-to-move-it-move-it/
-date: 2022/02/06
-modified: 2023/01/08
+date: 2022-02-06
+modified: 2024-02-23
 logsource:
   category: process_creation
   product: windows

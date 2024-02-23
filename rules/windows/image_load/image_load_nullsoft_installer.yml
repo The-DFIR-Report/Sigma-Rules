@@ -2,7 +2,8 @@ title: Nullsoft Scriptable Installer Script (NSIS) execution
 id: 221f15de-1cce-40b2-a766-2873938198c6
 description: Detects the loading of the NSIS System plugin library, indicative of an NSIS script execution.
 status: experimental
-date: 2023/06/12
+date: 2023-06-12
+modified: 2024-02-23
 author: "Maxime THIEBAUT (@0xThiebaut), @TheDFIRReport"
 references:
     - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out

@@ -5,8 +5,8 @@ status: test
 author: tas_kmanager, TheDFIRReport
 references: 
     - https://thedfirreport.com/2022/02/07/qbot-likes-to-move-it-move-it/
-date: 2022/02/06
-modified: 2023/01/08
+date: 2022-02-06
+modified: 2023-01-08
 logsource:
   product: windows
   service: system

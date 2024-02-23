@@ -5,7 +5,8 @@ status: experimental
 references:
     - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
 author: 'Kostastsale, TheDFIRReport'
-date: 2022/07/11
+date: 2022-07-11
+modified: 2024-02-23
 logsource:
     category: process_creation
     product: windows

@@ -4,7 +4,7 @@ description: Detects DNS queries for subdomains used for upload to ufile.io
 status: experimental
 author: yatinwad and TheDFIRReport
 date: 2021-12-13
-modified: 2024-012-22
+modified: 2024-02-23
 references:
     - https://thedfirreport.com/2021/12/13/diavol-ransomware/
 tags:

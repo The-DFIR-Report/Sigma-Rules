@@ -8,8 +8,8 @@ references:
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
 
 author: TheDFIRReport
-date: 2023/01/22
-modified: 2024/02/22
+date: 2023-01-22
+modified: 2024-02-23
 tags:
     - attack.discovery
     - attack.t1135
