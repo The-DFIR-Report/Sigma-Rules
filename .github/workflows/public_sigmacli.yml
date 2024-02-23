@@ -40,7 +40,7 @@ jobs:
         run: ${{ github.workspace }}/tests/public-rule-tests.sh -d ${{ github.workspace }}/rules
       # Run Conversion for Elastic
       - name: Elastic Rule Conversion
-        run: git show --name-only | grep "rules" | xargs  sigma convert -t elasticsearch -p sysmon -p ecs_windows -f siem_rule_ndjson | tail -n1 | jq . | egrep -v "related_integrations|required_fields|setup" | sed s/"SIGMA"/"DFIR Public Ruleset"/g | jq -c .
+        run: git show --name-only | grep "rules" | xargs sigma convert -t lucene -p sysmon -p ecs_windows -f siem_rule_ndjson | tail -n1 | jq . | egrep -v "related_integrations|required_fields|setup" | sed s/"SIGMA"/"DFIR Public Rules"/g | jq -c .
       # Run Conversion for Splunk
       - name: Splunk Rule Conversion
         run: git show --name-only | grep "rules" | xargs  sigma convert -t splunk  -p splunk_windows 
