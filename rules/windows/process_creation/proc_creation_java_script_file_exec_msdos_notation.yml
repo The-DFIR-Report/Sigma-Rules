@@ -1,0 +1,30 @@
+title: JavaScript Execution Using MSDOS 8.3 File Notation
+id: 81cfbbae-5e93-4934-84a2-e6a26f85c7bb
+related:
+    - id: dd6b39d9-d9be-4a3b-8fe0-fe3c6a5c1795
+      type: similar
+status: test
+description: Detects script execution using MSDOS 8.3 File names
+references:
+   - https://thedfirreport.com/
+author: _pete_0, TheDFIRReport
+date: 2024-02-13
+tags:
+    - attack.defense_evasion
+    - attack.t1059
+    - dist.public
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine|contains:
+            - '~1.js'
+        Image|endswith:
+          - '\wscript.exe'
+          - '\cscript.exe'
+    condition: selection
+falsepositives:
+    - Unknown
+level: medium
+
