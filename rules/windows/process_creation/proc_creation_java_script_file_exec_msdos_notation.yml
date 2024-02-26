@@ -6,7 +6,7 @@ related:
 status: test
 description: Detects script execution using MSDOS 8.3 File names
 references:
-   - https://thedfirreport.com/
+   - https://thedfirreport.com/2024/02/26/seo-poisoning-to-domain-control-the-gootloader-saga-continues/
 author: _pete_0, TheDFIRReport
 date: 2024-02-13
 tags:

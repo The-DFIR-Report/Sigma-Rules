@@ -3,7 +3,7 @@ id: 92f0538f-ad13-4776-9366-b7351d51c4b8
 status: test
 description: Detects Windows Defender disabling service installation
 references:
-   - https://thedfirreport.com/
+   - https://thedfirreport.com/2024/02/26/seo-poisoning-to-domain-control-the-gootloader-saga-continues/
 author: _pete_0, TheDFIRReport
 date: 2024-02-17
 tags:
