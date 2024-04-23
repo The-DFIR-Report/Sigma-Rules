@@ -1,0 +1,30 @@
+title: Data Exfiltration via AWS CLI
+id: e7732014-c4b9-4653-92b2-aa7cfe154bf7
+status: experimental
+description: Detects usage of AWS CLI to exfiltrate data
+references:
+    - https://thedfirreport.com/
+    - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html
+author: TheDFIRReport
+date: 2024/03/22
+modified: 2024/04/23
+tags:
+    - attack.exfiltration
+    - attack.t1567.002
+    - dist.public
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_cmdline_1:
+        CommandLine|contains: 's3 cp'
+    selection_cmdline_2:
+        CommandLine|contains: '--recursive'
+    selection_cmdline_3:
+        CommandLine|contains: '--region'
+    selection_cmdline_4:
+        CommandLine|contains: '--endpoint-url'
+    condition: all of selection_*
+falsepositives:
+    - Some administrators or automation could use AWS CLI to transfer data to S3.
+level: medium
