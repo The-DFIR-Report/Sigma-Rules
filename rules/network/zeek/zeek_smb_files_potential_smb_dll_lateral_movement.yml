@@ -1,26 +1,23 @@
 title: Potential SMB DLL Lateral Movement
-id: 8fe1524e-8c97-404c-9dee-090929a315c4 
+id: 8fe1524e-8c97-404c-9dee-090929a315c4
 status: experimental
 description: Detection of potential us of SMB to transfer DLL's into the ProgramData folder of hosts for purposes of lateral movement.
 author: TheDFIRReport
 date: 2022/09/12
 modified: 2023/01/08
 references:
-  - https://thedfirreport.com/
+    - https://thedfirreport.com/
 logsource:
-  product: zeek
-  service: smb_files
+    product: zeek
+    service: smb_files
 detection:
-  selection_1:
-    file_name|contains:
-      - 'programdata'
-  selection_2:
-    file_name|endswith:
-      - '\.dll'
-  condition: selection_1 and selection_2
+    selection:
+        file_name|contains: 'programdata'
+        file_name|endswith: '\.dll'
+    condition: selection
 falsepositives:
-  - RMM Tools and Administrative activities in ProgramData Folder.
+    - RMM Tools and Administrative activities in ProgramData Folder.
 level: medium
 tags:
-  - attack.lateral_movement
-  - attack.t1570
+    - attack.lateral_movement
+    - attack.t1570

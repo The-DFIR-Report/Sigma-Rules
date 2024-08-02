@@ -4,27 +4,26 @@ status: experimental
 description: Detects the execution of a specific OneLiner to Invoke PowerShell commands.
 author: 'Kostastsale, TheDFIRReport'
 references:
-  - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
-  - https://gist.github.com/mgeeky/3b11169ab77a7de354f4111aa2f0df38
-date: 2022-05-09
-modified: 2024-02-23
+    - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
+    - https://gist.github.com/mgeeky/3b11169ab77a7de354f4111aa2f0df38
+date: 2022/05/09
+modified: 2024/02/23
 logsource:
-  product: windows
-  category: process_creation
+    product: windows
+    category: process_creation
 detection:
-  selection1:
-    Image|endswith:
-      - '\powershell.exe'
-    CommandLine|contains|all:
-      - 'http://127.0.0.1'
-      - '%{(IRM $_)}'
-      - 'Invoke'
-  condition: selection1
+    selection:
+        Image|endswith: '\powershell.exe'
+        CommandLine|contains|all:
+            - 'http://127.0.0.1'
+            - '%{(IRM $_)}'
+            - 'Invoke'
+    condition: selection
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
 tags:
-  - attack.defense_evasion
-  - attack.t1562.001
-  - attack.execution
-  - attack.t1059.001
+    - attack.defense_evasion
+    - attack.t1562.001
+    - attack.execution
+    - attack.t1059.001

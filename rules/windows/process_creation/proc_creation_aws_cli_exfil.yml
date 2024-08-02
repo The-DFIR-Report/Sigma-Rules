@@ -16,15 +16,13 @@ logsource:
     category: process_creation
     product: windows
 detection:
-    selection_cmdline_1:
-        CommandLine|contains: 's3 cp'
-    selection_cmdline_2:
-        CommandLine|contains: '--recursive'
-    selection_cmdline_3:
-        CommandLine|contains: '--region'
-    selection_cmdline_4:
-        CommandLine|contains: '--endpoint-url'
-    condition: all of selection_*
+    selection:
+        CommandLine|contains|all:
+            - 's3 cp'
+            - '--recursive'
+            - '--region'
+            - '--endpoint-url'
+    condition: selection
 falsepositives:
     - Some administrators or automation could use AWS CLI to transfer data to S3.
 level: medium

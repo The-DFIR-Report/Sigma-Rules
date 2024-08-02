@@ -3,31 +3,31 @@ id: 16e0c76d-dbe9-461b-afce-ced21d819b29
 status: experimental
 description: Detects the creation of a schtask that executes a base64 encoded payload stored in the Windows Registry using PowerShell.
 author: 'Kostastsale, TheDFIRReport'
-references: 
-  - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
+references:
+    - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
 date: 2022/02/12
 modified: 2023/01/08
 logsource:
-  product: windows
-  category: process_creation
+    product: windows
+    category: process_creation
 detection:
-  selection1:
-    Image|endswith: '\schtasks.exe'
-    CommandLine|contains|all:
-      - '/Create'
-      - '/SC'
-  selection2:
-    CommandLine|contains|all:
-      - 'FromBase64String'
-      - 'powershell'
-      - 'Get-ItemProperty'
-      - 'HKCU:'
-  condition: selection1 and selection2
+    selection_1:
+        Image|endswith: '\schtasks.exe'
+        CommandLine|contains|all:
+            - '/Create'
+            - '/SC'
+    selection_2:
+        CommandLine|contains|all:
+            - 'FromBase64String'
+            - 'powershell'
+            - 'Get-ItemProperty'
+            - 'HKCU:'
+    condition: all of selection_*
 falsepositives:
-  - Unknown
+    - Unknown
 level: medium
 tags:
-  - attack.execution
-  - attack.persistence
-  - attack.t1053.005
-  - attack.t1059.001
+    - attack.execution
+    - attack.persistence
+    - attack.t1053.005
+    - attack.t1059.001

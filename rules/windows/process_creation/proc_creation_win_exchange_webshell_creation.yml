@@ -1,9 +1,9 @@
-title: Exchange Webshell creation
+title: Exchange WebShell Creation
 id: 3086329b-245b-4b91-a0f7-bed9b5438cf6
-description: These commands were used to create a webshell by exploiting ProxyShell vulnerabilities
+description: These commands were used to create a WebShell by exploiting ProxyShell vulnerabilities
 author: 'The DFIR Report'
-date: 2022-05-14
-modified: 2024-02-23
+date: 2022/05/14
+modified: 2024/02/23
 references:
     - https://thedfirreport.com/2022/03/21/apt35-automates-initial-access-using-proxyshell/
 logsource:
@@ -11,15 +11,14 @@ logsource:
     product: windows
 detection:
     selection_1:
-        CommandLine|contains|all:
-            - 'New-ManagementRoleAssignment -Role "Mailbox Import Export" -User "administrator@'
+        CommandLine|contains: 'New-ManagementRoleAssignment -Role "Mailbox Import Export" -User "administrator@'
     selection_2:
         CommandLine|contains|all:
             - 'New-MailboxExportRequest -Mailbox'
             - '-FilePath "\\localhost\C$'
             - '-IncludeFolders ("#Drafts#")'
             - 'aspx'
-    condition: selection_1 or selection_2
+    condition: 1 of selection_*
 falsepositives:
     - Legitimate Administrator activity
 level: medium

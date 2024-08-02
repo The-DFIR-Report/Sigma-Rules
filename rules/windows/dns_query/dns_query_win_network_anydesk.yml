@@ -4,24 +4,22 @@ status: experimental
 description: Detects use of AnyDesk
 author: _pete_0, TheDFIRReport
 references:
-  - https://support.anydesk.com/knowledge/firewall
+    - https://support.anydesk.com/knowledge/firewall
 date: 2022/05/06
 modified: 2022/05/06
 logsource:
-  category: dns_query
-  product: windows
+    category: dns_query
+    product: windows
 detection:
-  selection:
-    QueryName|contains:
-      - '.anydesk.com'
-    Image|endswith:
-      - '\anydesk.exe'
-  condition: selection
+    selection:
+        QueryName|contains: '.anydesk.com'
+        Image|endswith: '\anydesk.exe'
+    condition: selection
 falsepositives:
-  - Legitimate AnyDesk installation
+    - Legitimate AnyDesk installation
 level: high
 tags:
-  - attack.lateral_movement
-  - attack.t1133
-  - attack.command_and_control
-  - attack.t1219
+    - attack.lateral_movement
+    - attack.t1133
+    - attack.command_and_control
+    - attack.t1219

@@ -1,9 +1,10 @@
 title: AdFind Discovery
 id: 50046619-1037-49d7-91aa-54fc92923604
+status: stable
 description: AdFind has been seen in numerous intrusions. The threat actor(s) ran these commands.
 author: 'The DFIR Report'
-date: 2022-05-14
-modified: 2024-02-23
+date: 2022/05/14
+modified: 2024/02/23
 references:
     - https://thedfirreport.com/2020/05/08/adfind-recon/
     - https://thedfirreport.com/?s=adfind
@@ -12,19 +13,6 @@ logsource:
     product: windows
 detection:
     selection:
-        CommandLine|contains:
-            - 'adfind -gcb -sc trustdmp'
-            - 'adfind -f "(objectcategory=group)"'
-            - 'adfind -f (objectcategory=group)'
-            - 'adfind -subnets -f (objectCategory=subnet)'
-            - 'adfind -sc trustdmp'
-            - 'adfind -f "(objectcategory=organizationalUnit)"'
-            - 'adfind -f (objectcategory=organizationalUnit)'
-            - 'adfind -f "objectcategory=computer"'
-            - 'adfind -f objectcategory=computer'
-            - 'adfind -f "(objectcategory=person)"'
-            - 'adfind -f (objectcategory=person)'
-    renamed:
         CommandLine|contains:
             - '-gcb -sc trustdmp'
             - '-f "(objectcategory=group)"'
@@ -37,11 +25,10 @@ detection:
             - '-f objectcategory=computer'
             - '-f "(objectcategory=person)"'
             - '-f (objectcategory=person)'
-    condition: selection or renamed
+    condition: selection
 falsepositives:
     - Legitimate Administrator using tool for Active Directory querying.
 level: medium
-status: stable
 tags:
     - attack.discovery
     - attack.t1018

@@ -7,7 +7,6 @@ references:
     - https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/
 author: TheDFIRReport
 date: 2023/02/05
-
 tags:
     - attack.defense_evasion
     - attack.t1036.003
@@ -16,11 +15,9 @@ logsource:
     product: windows
 detection:
     selection_v1:
-        OriginalFileName:
-            - 'AutoHotkey.exe'
+        OriginalFileName: 'AutoHotkey.exe'
     selection_v2:
-        Product|contains:
-           - 'AutoHotkey' 
+        Product|contains: 'AutoHotkey'
     filter:
         Image|endswith:
             - '\AutoHotkey.exe'

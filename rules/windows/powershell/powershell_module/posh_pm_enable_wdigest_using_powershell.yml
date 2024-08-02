@@ -14,14 +14,14 @@ logsource:
     category: ps_module
     definition: PowerShell Module Logging must be enabled
 detection:
-    selection_4103:
-        Payload|contains|all: 
-          - 'Set-ItemProperty'
-          - 'UseLogonCredential'
-          - 'WDigest'
-          - 'Value'
-          - '1'
-    condition: selection_4103
+    selection:
+        Payload|contains|all:
+            - 'Set-ItemProperty'
+            - 'UseLogonCredential'
+            - 'WDigest'
+            - 'Value'
+            - '1'
+    condition: selection
 falsepositives:
     - Admin activity
 level: medium

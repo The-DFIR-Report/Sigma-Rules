@@ -1,6 +1,7 @@
 title: Adding, Listing and Removing Credentials via Cmdkey CommandLine Ultility
 id: a5661068-c85f-4ee1-bc13-6b753bd2c7b7
-description: Detects the use of cmdkey to add, remove, or list credentials. 
+status: experimental
+description: Detects the use of cmdkey to add, remove, or list credentials.
 references:
     - https://thedfirreport.com/2023/10/30/netsupport-intrusion-results-in-domain-compromise
     - https://ss64.com/nt/cmdkey.html#:~:text=CMDKEY.exe%20(Windows%202003%2B),and%20password%20to%20the%20list.
@@ -10,16 +11,14 @@ logsource:
     product: windows
 detection:
     selection:
-      Image|endswith:
-        - '\cmdkey.exe'
-      CommandLine|windash|contains:
-        - ' -d'
-        - ' -a'
-        - ' -l'
-    condition: selection
+        Image|endswith: '\cmdkey.exe'
+        CommandLine|windash|contains:
+            - ' -d'
+            - ' -a'
+            - ' -l'
+        condition: selection
 falsepositives:
     - Admins are using cmdkey.exe for legitimate purposes.
-status: experimental
 level: low
 tags:
     - attack.credential_access

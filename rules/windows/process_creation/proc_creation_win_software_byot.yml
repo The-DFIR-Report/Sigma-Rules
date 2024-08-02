@@ -4,32 +4,31 @@ status: experimental
 description: Detects use of custom scripts i.e. BAT files.
 author: _pete_0, TheDFIRReport
 references:
-  - https://thedfirreport.com/
-date: 2022-06-10
-modified: 2024-02-23
+    - https://thedfirreport.com/
+date: 2022/06/10
+modified: 2024/02/23
 logsource:
-  category: process_creation
-  product: windows
+    category: process_creation
+    product: windows
 detection:
-  selection:
-    CommandLine|contains:
-      - adf.bat
-      - adfind.bat
-      - locker.bat
-      - kill.bat
-      - def.bat
-      - start.bat
-      - shadow.bat
-      - logdelete.bat
-      - closeapps.bat
-    Image|endswith:
-      - '\cmd.exe'
-  condition: selection
+    selection:
+        Image|endswith: '\cmd.exe'
+        CommandLine|contains:
+            - adf.bat
+            - adfind.bat
+            - locker.bat
+            - kill.bat
+            - def.bat
+            - start.bat
+            - shadow.bat
+            - logdelete.bat
+            - closeapps.bat
+    condition: selection
 fields:
-  - CommandLine
+    - CommandLine
 falsepositives:
-  - Admin tools
+    - Admin tools
 level: high
 tags:
-  - attack.command_and_control
-  - attack.t1105
+    - attack.command_and_control
+    - attack.t1105

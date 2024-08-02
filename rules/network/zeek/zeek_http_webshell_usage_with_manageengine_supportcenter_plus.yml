@@ -6,26 +6,25 @@ author: iiamaleks,TheDFIRReport
 date: 2022/06/06
 modified: 2023/01/08
 references:
-  - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
+    - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
 logsource:
-  product: zeek
-  service: http
+    product: zeek
+    service: http
 detection:
-  port:
-    destination_port: 8080
-  webshell_url_path:
-    - url_original|contains:
-      - '/custom/login/*.jsp'
-  webshell_paramters:
-    - url_original|contains:
-      - '?file='
-      - '&data='
-      - '&action='
-      - '&p='
-  condition: port and webshell_url_path and webshell_paramters
+    selection_port:
+        destination_port: 8080
+    selection_webshell_url_path:
+        url_original|contains: '/custom/login/*.jsp'
+    selection_webshell_paramters:
+        url_original|contains:
+            - '?file='
+            - '&data='
+            - '&action='
+            - '&p='
+    condition: all of selection_*
 falsepositives:
-  - Web application using the same file path, file name, and GET parameters as described in this rule.
+    - Web application using the same file path, file name, and GET parameters as described in this rule.
 level: high
 tags:
-  - attack.persistence
-  - attack.t1505.003
+    - attack.persistence
+    - attack.t1505.003

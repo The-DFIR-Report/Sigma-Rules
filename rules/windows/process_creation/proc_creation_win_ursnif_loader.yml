@@ -4,23 +4,21 @@ status: Experimental
 description: Detects a very specific command the Ursnif loader runs.
 author: svch0st, TheDFIRReport
 references:
-  - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/time
-  - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
+    - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/time
+    - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
 date: 2023/01/08
 logsource:
-  category: process_creation
-  product: windows
+    category: process_creation
+    product: windows
 detection:
-  selection:
-    CommandLine|contains|all:
-      - '/C'
-      - 'pause dll mail'
-    Image|endswith:
-      - 'syswow64\cmd.exe'
-  condition: selection
+    selection:
+        Image|endswith: 'syswow64\cmd.exe'
+        CommandLine|contains|all:
+            - '/C'
+            - 'pause dll mail'
+    condition: selection
 fields:
-  - CommandLine
+    - CommandLine
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
-

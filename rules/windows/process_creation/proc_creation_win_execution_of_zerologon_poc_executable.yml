@@ -3,37 +3,35 @@ id: fe0c3029-c6df-4f0b-9b82-e4ca4b9659f0
 status: experimental
 description: Detects the execution of the commonly used ZeroLogon PoC executable.
 author: 'Kostastsale, TheDFIRReport'
-references: 
-  - https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/
-  - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
-date: 2022-02-12
-modified: 2024-02-23
+references:
+    - https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/
+    - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
+date: 2022/02/12
+modified: 2024/02/23
 logsource:
-  product: windows
-  category: process_creation
+    product: windows
+    category: process_creation
 detection:
-  selection1:
-    ParentImage|endswith: 
-      - '\cmd.exe'
-    Image|endswith: 
-      - '\cool.exe'
-      - '\zero.exe'
-    CommandLine|contains|all:
-      - 'Administrator'
-      - '-c'
-  selection2:
-    CommandLine|contains|all:
-      - 'taskkill'
-      - '/f'
-      - '/im'
-  selection3:
-    CommandLine|contains:
-      - 'powershell'
-  condition: selection1 and (selection2 or selection3)
+    selection1:
+        ParentImage|endswith: '\cmd.exe'
+        Image|endswith:
+            - '\cool.exe'
+            - '\zero.exe'
+        CommandLine|contains|all:
+            - 'Administrator'
+            - '-c'
+    selection2:
+        CommandLine|contains|all:
+            - 'taskkill'
+            - '/f'
+            - '/im'
+    selection3:
+        CommandLine|contains: 'powershell'
+    condition: selection1 and (selection2 or selection3)
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
 tags:
-  - attack.execution
-  - attack.lateral_movement
-  - attack.t1210
+    - attack.execution
+    - attack.lateral_movement
+    - attack.t1210

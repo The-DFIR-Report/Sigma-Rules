@@ -17,8 +17,7 @@ logsource:
 detection:
     selection:
         ParentImage|endswith: '\sqlservr.exe'
-        Image|endswith:
-            - '\cmd.exe'
+        Image|endswith: '\cmd.exe'
         CommandLine|contains:
             -  'del'
             -  'cacls'

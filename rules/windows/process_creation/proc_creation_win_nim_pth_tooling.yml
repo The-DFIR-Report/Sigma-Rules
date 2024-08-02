@@ -1,5 +1,6 @@
 title: NIM Pass The Hash Tooling Detection
 id: d938de18-7f57-4c9c-93b9-a621c746d594
+status: experimental
 description: Detection of NIM Tooling that Creates a Remote User (pth_createusers.exe) and Adds them to Local Admins group (pth_addadmin.exe)
 author: 'The DFIR Report'
 date: 2023/10/27
@@ -22,9 +23,8 @@ detection:
         CommandLine|contains:
             - '-u '
             - '--username'
-    hash_value1: # The --hash can be used to pass the hash paramter.
-        CommandLine|contains:
-            - '--hash'
+    hash_value1: # The --hash can be used to pass the hash parameter.
+        CommandLine|contains: '--hash'
     parent:
         ParentImage|endswith:
             - '\powershell.exe'
@@ -33,8 +33,7 @@ detection:
         CommandLine|re: '[a-f0-9]{32}'
     condition: 1 of option_* and hash_value1 and hash_value_re and parent
 falsepositives:
-    - uknown
+    - Unknown
 level: high
-status: experimental
 tags:
     - attack.t1136

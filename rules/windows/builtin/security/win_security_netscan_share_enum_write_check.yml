@@ -19,7 +19,7 @@ detection:
     selection:
         EventID: 5145
         RelativeTargetName: 'delete.me'
-        AccessMask: 
+        AccessMask:
             - '0x2'
             - '0x130196'
         ObjectType: File

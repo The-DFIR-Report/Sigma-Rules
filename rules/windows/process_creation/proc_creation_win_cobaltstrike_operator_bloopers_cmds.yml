@@ -4,39 +4,38 @@ status: experimental
 description: Detects use of Cobalt Strike commands accidentally entered in the CMD shell
 author: _pete_0, TheDFIRReport
 references:
-  - https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/cobalt-4-5-user-guide.pdf
+    - https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/cobalt-4-5-user-guide.pdf
 date: 2022/05/06
 modified: 2022/05/06
 logsource:
-  category: process_creation
-  product: windows
+    category: process_creation
+    product: windows
 detection:
-  selection:
-    CommandLine|contains:
-      - psinject
-      - spawnas
-      - socks
-      - make_token
-      - remote-exec
-      - rev2self
-      - shell
-      - dcsync
-      - upload
-      - sleep
-      - ls
-      - logonpasswords
-      - ps
-      - execute-assembly
-      - pth
-      - getsystem
-    Image|endswith:
-      - '\cmd.exe'
-  condition: selection
+    selection:
+        Image|endswith: '\cmd.exe'
+        CommandLine|contains:
+            - psinject
+            - spawnas
+            - socks
+            - make_token
+            - remote-exec
+            - rev2self
+            - shell
+            - dcsync
+            - upload
+            - sleep
+            - ls
+            - logonpasswords
+            - ps
+            - execute-assembly
+            - pth
+            - getsystem
+    condition: selection
 fields:
-  - CommandLine
+    - CommandLine
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
 tags:
-  - attack.execution
-  - attack.t1059.003
+    - attack.execution
+    - attack.t1059.003

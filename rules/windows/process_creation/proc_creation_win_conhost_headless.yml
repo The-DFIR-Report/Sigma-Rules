@@ -2,27 +2,25 @@ title: Conhost Suspicious Command Execution
 id: 21c034f0-ff15-4d4d-9c14-72fdb8ee23c9
 status: experimental
 description: Detects use of conhost in "headless" mode. By running conhost.exe in "headless" mode, it means that no visible window will pop up on the victim's machine.
-example_cmdline: 
-        - 'conhost.exe --headless --width 190 --height 22 --signal 0x3e4 --server 0x3e8'
+example_cmdline:
+    - 'conhost.exe --headless --width 190 --height 22 --signal 0x3e4 --server 0x3e8'
 author: TheDFIRReport
 references:
-  - https://thedfirreport.com/
-  - 'Event 25197'
+    - https://thedfirreport.com/
+    - 'Event 25197'
 date: 2023/10/03
 logsource:
-  category: process_creation
-  product: windows
+    category: process_creation
+    product: windows
 detection:
-  selection:
-    Image|endswith:
-      - '\conhost.exe'
-    CommandLine|endswith:
-      - ' --headless '
-  condition: selection
+    selection:
+        Image|endswith: '\conhost.exe'
+        CommandLine|endswith: ' --headless '
+    condition: selection
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
 tags:
-  - attack.defense_evasion
-  - attack.t1564.003
-  - dist.public
+    - attack.defense_evasion
+    - attack.t1564.003
+    - dist.public

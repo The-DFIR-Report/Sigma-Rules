@@ -1,9 +1,9 @@
 title: PSEXEC Custom Named Service Binary
 id: 752956d6-cf16-43f5-a8ca-b82f968e458d
 status: experimental
-description: PSEXEC execututed with non default service binary name
+description: PSEXEC executed with non default service binary name
 references:
-    - thedfirreport.com
+    - https://thedfirreport.com/
 author: 'TheDFIRReport'
 date: 2022/04/24
 modified: 2023/01/08
@@ -11,7 +11,7 @@ logsource:
     product: windows
     category: process_creation
 detection:
-    selection: 
+    selection:
         Image|endswith: '\psexec.exe'
         CommandLine|contains: ' -r '
     condition: selection

@@ -3,8 +3,8 @@ id: 1cbbeaaf-3c8c-4e4c-9d72-49485b6a176b
 description: Detects DNS queries for subdomains used for upload to ufile.io
 status: experimental
 author: yatinwad and TheDFIRReport
-date: 2021-12-13
-modified: 2024-02-23
+date: 2021/12/13
+modified: 2024/02/23
 references:
     - https://thedfirreport.com/2021/12/13/diavol-ransomware/
 tags:

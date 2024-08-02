@@ -5,7 +5,7 @@ description: Detects Windows Defender disabling service installation
 references:
    - https://thedfirreport.com/2024/02/26/seo-poisoning-to-domain-control-the-gootloader-saga-continues/
 author: _pete_0, TheDFIRReport
-date: 2024-02-17
+date: 2024/02/17
 tags:
     - attack.execution
     - attack.t1569.002
