@@ -6,8 +6,8 @@ author: _pete_0, TheDFIRReport
 references:
     - https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/cobalt-4-5-user-guide.pdf
     - https://thedfirreport.com/2021/10/04/bazarloader-and-the-conti-leaks/
-date: 2022/05/06
-modified: 2022/05/06
+date: 2022-05-06
+modified: 2022-05-06
 logsource:
     category: process_creation
     product: windows

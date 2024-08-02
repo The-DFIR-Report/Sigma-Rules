@@ -6,7 +6,7 @@ references:
     - https://attack.mitre.org/techniques/T1036/
     - https://thedfirreport.com/2023/02/06/collect-exfiltrate-sleep-repeat/
 author: TheDFIRReport
-date: 2023/02/05
+date: 2023-02-05
 tags:
     - attack.defense_evasion
     - attack.t1036.003

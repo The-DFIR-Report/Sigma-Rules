@@ -2,7 +2,7 @@ title: Enable WDigest using PowerShell (ps_module)
 id: c677394a-1e3e-4ab5-a6a8-295bf0b71137
 description: Rule to detect registry modifications to enable WDigest using powershell script modules.
 status: experimental
-date: 2022/06/05
+date: 2022-06-05
 author: The DFIR Report
 references:
     - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/

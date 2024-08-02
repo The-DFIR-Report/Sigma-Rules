@@ -3,8 +3,8 @@ id: 50046619-1037-49d7-91aa-54fc92923604
 status: stable
 description: AdFind has been seen in numerous intrusions. The threat actor(s) ran these commands.
 author: 'The DFIR Report'
-date: 2022/05/14
-modified: 2024/02/23
+date: 2022-05-14
+modified: 2024-02-23
 references:
     - https://thedfirreport.com/2020/05/08/adfind-recon/
     - https://thedfirreport.com/?s=adfind

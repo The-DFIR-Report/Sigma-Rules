@@ -2,8 +2,8 @@ title: List remote processes using tasklist
 id: 80a56507-6778-4d04-8346-320a70358f2c
 description: Detecting the use of tasklist to display processes of remote hosts using the /S parameter.
 status: experimental
-date: 2023/06/12
-modified: 2024/02/23
+date: 2023-06-12
+modified: 2024-02-23
 author: "@kostastsale, @TheDFIRReport"
 references:
     - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out

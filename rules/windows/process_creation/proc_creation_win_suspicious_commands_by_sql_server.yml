@@ -5,8 +5,8 @@ status: experimental
 author: 'TheDFIRReport'
 references:
     - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver
-date: 2022/07/11
-modified: 2022/12/16
+date: 2022-07-11
+modified: 2022-12-16
 tags:
     - attack.initial_access
     - attack.persistence

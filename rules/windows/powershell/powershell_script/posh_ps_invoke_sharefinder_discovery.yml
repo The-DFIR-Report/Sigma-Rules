@@ -7,8 +7,8 @@ references:
     - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares/
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
 author: TheDFIRReport
-date: 2023/01/23
-modified: 2024/02/23
+date: 2023-01-23
+modified: 2024-02-23
 tags:
     - attack.discovery
     - attack.t1135

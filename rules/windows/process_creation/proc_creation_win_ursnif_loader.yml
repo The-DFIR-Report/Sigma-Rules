@@ -6,7 +6,7 @@ author: svch0st, TheDFIRReport
 references:
     - https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/time
     - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
-date: 2023/01/08
+date: 2023-01-08
 logsource:
     category: process_creation
     product: windows

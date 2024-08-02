@@ -2,8 +2,8 @@ title: FlawedGrace spawning threat injection target
 id: 295e71e5-38c9-4a59-90dd-9fa7bf617b4b
 description: Detecting the command FlawedGrace is using for the purpose of injecting into it the spawned process, in this case the cmd.exe process.
 status: experimental
-date: 2023/06/12
-modified: 2024/02/23
+date: 2023-06-12
+modified: 2024-02-23
 author: "@kostastsale, @TheDFIRReport"
 references:
     - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out

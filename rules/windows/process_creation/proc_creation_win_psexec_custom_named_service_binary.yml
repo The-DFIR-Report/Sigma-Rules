@@ -5,8 +5,8 @@ description: PSEXEC executed with non default service binary name
 references:
     - https://thedfirreport.com/
 author: 'TheDFIRReport'
-date: 2022/04/24
-modified: 2023/01/08
+date: 2022-04-24
+modified: 2023-01-08
 logsource:
     product: windows
     category: process_creation

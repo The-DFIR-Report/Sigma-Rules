@@ -5,8 +5,8 @@ description: Rule to detect discovery activity for WDigest registry settings
 author: The DFIR Report
 references:
     - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
-date: 2022/06/05
-modified: 2024/02/23
+date: 2022-06-05
+modified: 2024-02-23
 tags:
     - attack.discovery
     - attack.t1012

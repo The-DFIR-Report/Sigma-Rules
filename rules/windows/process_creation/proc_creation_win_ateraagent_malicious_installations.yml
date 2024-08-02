@@ -2,8 +2,8 @@ title: AteraAgent malicious installations
 id: fb0f2d48-269d-473e-9afc-c540a16a990f
 description: Detects potentially malicious AteraAgent installations when the IntegratorLogin parameter is used to register a non-business email.
 status: experimental
-date: 2022/09/12
-modified: 2024/02/23
+date: 2022-09-12
+modified: 2024-02-23
 author: 'kostastsale, TheDFIRReport'
 logsource:
     category: process_creation

@@ -6,8 +6,8 @@ author: 'Kostastsale, TheDFIRReport'
 references:
     - https://thedfirreport.com/2021/11/01/from-zero-to-domain-admin/
     - https://thedfirreport.com/2022/02/21/qbot-and-zerologon-lead-to-full-domain-compromise/
-date: 2022/02/12
-modified: 2024/02/23
+date: 2022-02-12
+modified: 2024-02-23
 logsource:
     product: windows
     category: process_creation

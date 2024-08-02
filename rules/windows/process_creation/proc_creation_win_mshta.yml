@@ -6,7 +6,7 @@ author: TheDFIRReport
 references:
     - https://lolbas-project.github.io/lolbas/Binaries/Mshta/
     - https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts
-date: 2023/01/08
+date: 2023-01-08
 logsource:
     category: process_creation
     product: windows

@@ -6,7 +6,7 @@ author:  TheDFIRReport
 references:
     - https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/
     - Case 15184
-date: 2022/10/03
+date: 2022-10-03
 logsource:
   category: process_creation
   product: windows

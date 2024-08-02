@@ -2,8 +2,8 @@ title: Suspicious Scheduled Task Creation to execute LOLbins
 id: e4cae9a5-49a8-46ab-b223-87565b849e64
 status: experimental
 description: Detects command line creation of scheduled tasks using commomly abused LOLbins.
-date: 2021/10/18
-modified: 2024/02/22
+date: 2021-10-18
+modified: 2024-02-22
 author: yatinwad and TheDFIRReport
 tags:
     - attack.persistence

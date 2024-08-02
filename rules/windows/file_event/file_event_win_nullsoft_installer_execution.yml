@@ -2,8 +2,8 @@ title: Nullsoft Scriptable Installer Script (NSIS) file creation
 id: b95288d8-020a-4df0-95cb-d2d3a806ab11
 description: Detects the creation of the NSIS System plugin library, indicative of an NSIS script execution.
 status: experimental
-date: 2023/06/12
-modified: 2024/02/23
+date: 2023-06-12
+modified: 2024-02-23
 author: "Maxime THIEBAUT (@0xThiebaut), @TheDFIRReport"
 references:
     - https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out

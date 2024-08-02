@@ -3,8 +3,8 @@ id: 3eaa2cee-2dfb-46e9-98f6-3782aab30f38
 status: experimental
 description: Detection of potential us of SMB to transfer DLL's into the C$ folder of hosts unique to Qbot malware for purposes of lateral movement.
 author: TheDFIRReport
-date: 2022/09/12
-modified: 2024/02/23
+date: 2022-09-12
+modified: 2024-02-23
 references:
     - https://thedfirreport.com/2022/10/31/follina-exploit-leads-to-domain-compromise/
 logsource:

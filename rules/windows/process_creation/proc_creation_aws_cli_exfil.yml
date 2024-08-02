@@ -6,8 +6,8 @@ references:
     - https://thedfirreport.com/2024/04/29/from-icedid-to-dagon-locker-ransomware-in-29-days/
     - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html
 author: TheDFIRReport
-date: 2024/03/22
-modified: 2024/04/23
+date: 2024-03-22
+modified: 2024-04-23
 tags:
     - attack.exfiltration
     - attack.t1567.002

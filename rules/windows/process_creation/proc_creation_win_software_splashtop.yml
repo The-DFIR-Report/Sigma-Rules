@@ -6,8 +6,8 @@ author: _pete_0, TheDFIRReport
 references:
     - https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/212724303-Why-does-the-Splashtop-software-show-unable-to-reach-Splashtop-servers-
     - https://thedfirreport.com/2022/04/04/stolen-images-campaign-ends-in-conti-ransomware/
-date: 2022/05/06
-modified: 2022/05/06
+date: 2022-05-06
+modified: 2022-05-06
 logsource:
     category: process_creation
     product: windows

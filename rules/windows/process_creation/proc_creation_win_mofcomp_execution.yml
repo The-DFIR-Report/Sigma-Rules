@@ -5,8 +5,8 @@ description: Detects abuse of mofcomp to load WMI classes i.e. to create WMI eve
 author: _pete_0, TheDFIRReport
 references:
     - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
-date: 2022/07/11
-modified: 2022/07/11
+date: 2022-07-11
+modified: 2022-07-11
 logsource:
     category: process_creation
     product: windows

@@ -3,8 +3,8 @@ id: d938de18-7f57-4c9c-93b9-a621c746d594
 status: experimental
 description: Detection of NIM Tooling that Creates a Remote User (pth_createusers.exe) and Adds them to Local Admins group (pth_addadmin.exe)
 author: 'The DFIR Report'
-date: 2023/10/27
-modified: 2023/10/27
+date: 2023-10-27
+modified: 2023-10-27
 references:
     - https://thedfirreport.com/2023/10/30/netsupport-intrusion-results-in-domain-compromise
 logsource:

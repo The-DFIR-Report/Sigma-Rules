@@ -5,8 +5,8 @@ description: Detects the registry modification to enable restricted admin mode u
 author: 'Kostastsale, TheDFIRReport'
 references:
     - https://thedfirreport.com/2022/05/09/seo-poisoning-a-gootloader-story/
-date: 2022/05/09
-modified: 2023/01/08
+date: 2022-05-09
+modified: 2023-01-08
 logsource:
     product: windows
     category: process_creation

@@ -5,7 +5,7 @@ description: Detects Bumblebee WmiPrvSE parent process manipulation
 author:  TheDFIRReport
 references:
     - https://thedfirreport.com/2022/09/26/bumblebee-round-two/
-date: 2022/09/26
+date: 2022-09-26
 logsource:
     category: process_creation
     product: windows

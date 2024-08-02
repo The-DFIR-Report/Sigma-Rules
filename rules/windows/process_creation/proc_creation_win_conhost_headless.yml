@@ -8,7 +8,7 @@ author: TheDFIRReport
 references:
     - https://thedfirreport.com/
     - 'Event 25197'
-date: 2023/10/03
+date: 2023-10-03
 logsource:
     category: process_creation
     product: windows
