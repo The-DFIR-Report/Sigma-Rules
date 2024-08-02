@@ -11,19 +11,17 @@ logsource:
     category: process_creation
     product: windows
 detection:
-    selection1:
-        Image|endswith:
-            - '\cmd.exe'
+    selection_1:
+        Image|endswith: '\cmd.exe'
         CommandLine|contains|all:
             - ' /I '
             - ' /SI '
-    selection2:
-        Image|endswith:
-            - '\cmd.exe'
+    selection_2:
+        Image|endswith: '\cmd.exe'
         CommandLine|contains|all:
             - ' /O '
-            - ' /SO '   
-    condition: selection1 or selection2
+            - ' /SO '
+    condition: 1 of selection_*
 falsepositives:
     - Unknown
 level: high

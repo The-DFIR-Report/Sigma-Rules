@@ -4,25 +4,24 @@ status: experimental
 description: Detects abuse of mofcomp to load WMI classes i.e. to create WMI event subscriptions
 author: _pete_0, TheDFIRReport
 references:
-  - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
-date: 2022/07/11
-modified: 2022/07/11
+    - https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
+date: 2022-07-11
+modified: 2022-07-11
 logsource:
-  category: process_creation
-  product: windows
+    category: process_creation
+    product: windows
 detection:
-  selection:
-    Image|endswith:
-      - '\mofcomp.exe'
-    ParentImage|endswith:
-      - '\cmd.exe'
-      - '\powershell.exe'
-  condition: selection
+    selection:
+        Image|endswith: '\mofcomp.exe'
+        ParentImage|endswith:
+            - '\cmd.exe'
+            - '\powershell.exe'
+    condition: selection
 fields:
-  - ParentCommandLine
+    - ParentCommandLine
 falsepositives:
-  - System administrator activities
+    - System administrator activities
 level: high
 tags:
-  - attack.execution
-  - attack.t1546.003
+    - attack.execution
+    - attack.t1546.003

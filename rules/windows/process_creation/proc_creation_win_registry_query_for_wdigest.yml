@@ -1,5 +1,5 @@
 title: Registry Query for WDigest
-id: cf23c788-c4de-4607-9205-68b2b11f5029 
+id: cf23c788-c4de-4607-9205-68b2b11f5029
 status: experimental
 description: Rule to detect discovery activity for WDigest registry settings
 author: The DFIR Report
@@ -16,7 +16,7 @@ logsource:
 detection:
     selection:
         Image|endswith: '\reg.exe'
-        CommandLine|contains|all:  
+        CommandLine|contains|all:
             - 'query'
             - 'WDigest'
             - 'UseLogonCredential'

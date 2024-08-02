@@ -6,10 +6,9 @@ description: |
 references:
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
     - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares
-
 author: TheDFIRReport
-date: 2023/01/22
-modified: 2024/02/22
+date: 2023-01-22
+modified: 2024-02-22
 tags:
     - attack.discovery
     - attack.t1135
@@ -21,7 +20,7 @@ detection:
         path|endswith:
             #- \$IPC Too likely to result in false positive hits due to normal behavior
             - \$C
-            - \$ADMIN 
+            - \$ADMIN
     timeframe: 30s
     condition: selection | count(path) by src_ip > 30
 falsepositives:

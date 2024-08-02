@@ -11,20 +11,19 @@ logsource:
     category: process_creation
     product: windows
 detection:
-    selection1:
+    selection:
         ParentImage|endswith:
-          - '\cmd.exe'
-          - '\powershell.exe'
-        Image|endswith:
-          - '\reg.exe'
+            - '\cmd.exe'
+            - '\powershell.exe'
+        Image|endswith: '\reg.exe'
         CommandLine|contains|all:
-          - 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\Userlist'
-          - 'add'
-          - '/t'
-          - 'REG_DWORD'
-          - '/v'
-          - '/d 0'
-    condition: selection1
+            - 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\Userlist'
+            - 'add'
+            - '/t'
+            - 'REG_DWORD'
+            - '/v'
+            - '/d 0'
+    condition: selection
 falsepositives:
     - System administrator activities
 level: medium

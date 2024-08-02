@@ -12,10 +12,10 @@ logsource:
     category: file_event
     product: windows
 detection:
-    selection1:
+    selection:
         TargetFilename|contains: '\Temp\ns'
         TargetFilename|endswith: '.tmp\System.dll'
-    condition: selection1
+    condition: selection
 falsepositives:
     - Legitimate NSIS installers (e.g., Razer Chroma, Pulse Secure, ...)
 level: low
