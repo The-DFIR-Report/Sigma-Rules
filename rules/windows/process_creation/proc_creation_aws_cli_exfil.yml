@@ -5,9 +5,11 @@ description: Detects usage of AWS CLI to exfiltrate data
 references:
     - https://thedfirreport.com/2024/04/29/from-icedid-to-dagon-locker-ransomware-in-29-days/
     - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html
-author: TheDFIRReport
+    - https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object.html
+    - https://docs.aws.amazon.com/cli/v1/userguide/cli-services-s3-commands.html
+author: TheDFIRReport, MahirAli Khan (in/mahiralikhan)
 date: 2024/03/22
-modified: 2024/04/23
+modified: 2024/10/12
 tags:
     - attack.exfiltration
     - attack.t1567.002
@@ -16,15 +18,16 @@ logsource:
     category: process_creation
     product: windows
 detection:
-    selection_cmdline_1:
-        CommandLine|contains: 's3 cp'
-    selection_cmdline_2:
-        CommandLine|contains: '--recursive'
-    selection_cmdline_3:
-        CommandLine|contains: '--region'
-    selection_cmdline_4:
-        CommandLine|contains: '--endpoint-url'
-    condition: all of selection_*
+    selection_cmdline_S3_1:
+        CommandLine|contains:
+            - 's3 cp'
+            - 's3 sync'
+            - 's3 mv'
+    selection_cmdline_S3_2:
+        CommandLine|contains: 's3://'
+    selection_cmdline_S3API:
+        CommandLine|contains: 's3api put-object'
+    condition: (all of selection_cmdline_S3_* ) or selection_cmdline_S3API
 falsepositives:
     - Some administrators or automation could use AWS CLI to transfer data to S3.
 level: medium
