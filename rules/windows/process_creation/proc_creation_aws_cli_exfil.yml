@@ -18,16 +18,20 @@ logsource:
     category: process_creation
     product: windows
 detection:
-    selection_cmdline_S3_1:
+    selection_cmdline_args:
+        CommandLine|contains:
+            - '--region'
+            - '--endpoint-url'
+    selection_cmdline_S3_ops_1:
         CommandLine|contains:
             - 's3 cp'
             - 's3 sync'
             - 's3 mv'
-    selection_cmdline_S3_2:
+    selection_cmdline_S3_ops_2:
         CommandLine|contains: 's3://'
     selection_cmdline_S3API:
         CommandLine|contains: 's3api put-object'
-    condition: (all of selection_cmdline_S3_* ) or selection_cmdline_S3API
+    condition: (selection_cmdline_args and all of selection_cmdline_S3_*) or selection_cmdline_S3API
 falsepositives:
     - Some administrators or automation could use AWS CLI to transfer data to S3.
 level: medium
