@@ -9,6 +9,7 @@ references:
   - https://thedfirreport.com/
   - 'Event 25197'
 date: 2023/10/03
+modified: 2024/06/18
 logsource:
   category: process_creation
   product: windows
@@ -16,7 +17,7 @@ detection:
   selection:
     Image|endswith:
       - '\conhost.exe'
-    CommandLine|endswith:
+    CommandLine|contains:
       - ' --headless '
   condition: selection
 falsepositives:
