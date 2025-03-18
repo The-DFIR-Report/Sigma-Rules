@@ -27,4 +27,4 @@ tags:
     - attack.t1505.003
     - attack.persistence
     - attack.t1190
-    - attack.initial_access
+    - attack.initial-access

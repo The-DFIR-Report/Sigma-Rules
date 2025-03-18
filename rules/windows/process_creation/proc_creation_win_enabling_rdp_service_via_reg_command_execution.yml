@@ -41,7 +41,7 @@ falsepositives:
     - Unknown
 level: high
 tags:
-    - attack.defense_evasion
-    - attack.lateral_movement
+    - attack.defense-evasion
+    - attack.lateral-movement
     - attack.t1021.001
     - attack.t1112

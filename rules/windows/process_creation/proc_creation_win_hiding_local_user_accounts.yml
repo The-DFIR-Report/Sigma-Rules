@@ -29,4 +29,4 @@ falsepositives:
 level: medium
 tags:
     - attack.t1564.002
-    - attack.defense_evasion
+    - attack.defense-evasion

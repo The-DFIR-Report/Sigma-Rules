@@ -20,7 +20,7 @@ falsepositives:
     - Legitimate SplashTop installation
 level: high
 tags:
-    - attack.lateral_movement
+    - attack.lateral-movement
     - attack.t1133
-    - attack.command_and_control
+    - attack.command-and-control
     - attack.t1219

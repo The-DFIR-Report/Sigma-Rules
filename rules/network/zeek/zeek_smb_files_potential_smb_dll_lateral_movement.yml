@@ -19,5 +19,5 @@ falsepositives:
     - RMM Tools and Administrative activities in ProgramData Folder.
 level: medium
 tags:
-    - attack.lateral_movement
+    - attack.lateral-movement
     - attack.t1570

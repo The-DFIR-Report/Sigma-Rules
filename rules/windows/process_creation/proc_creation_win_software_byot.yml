@@ -30,5 +30,5 @@ falsepositives:
     - Admin tools
 level: high
 tags:
-    - attack.command_and_control
+    - attack.command-and-control
     - attack.t1105
