@@ -12,10 +12,8 @@ logsource:
     product: windows
 detection:
     selection:
-        Image|endswith:
-            - 'cmd.exe'
-        CommandLine|contains:
-            - 'dir *\\*\c$\*>>'
+        Image|endswith: 'cmd.exe'
+        CommandLine|contains: 'dir *\\*\c$\*>>'
     condition: selection
 falsepositives:
     - Possible administrator activity

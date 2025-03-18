@@ -18,13 +18,11 @@ logsource:
     product: windows
 detection:
     selection:
-        CommandLine|contains:
-            - '~1.js'
+        CommandLine|contains: '~1.js'
         Image|endswith:
-          - '\wscript.exe'
-          - '\cscript.exe'
+            - '\wscript.exe'
+            - '\cscript.exe'
     condition: selection
 falsepositives:
     - Unknown
 level: medium
-

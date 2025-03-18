@@ -6,21 +6,21 @@ author: iiamaleks,TheDFIRReport
 date: 2022-06-06
 modified: 2024-02-23
 references:
-  - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
+    - https://thedfirreport.com/2022/06/06/will-the-real-msiexec-please-stand-up-exploit-leads-to-data-exfiltration/
 logsource:
-  product: zeek
-  service: ssh
+    product: zeek
+    service: ssh
 detection:
-  port:
-    destination_port: 443
-  ssh_client:
-    zeek_ssh_client: "SSH-2.0-PuTTY_Release_0.76"
-  ssh_server:
-    zeek_ssh_server: "SSH-2.0-9.17 FlowSsh: Bitvise SSH Server (WinSSHD) 9.17"
-  condition: port and ssh_client and ssh_server
+    selection_port:
+        destination_port: 443
+    selection_ssh_client:
+        zeek_ssh_client: "SSH-2.0-PuTTY_Release_0.76"
+    selection_ssh_server:
+        zeek_ssh_server: "SSH-2.0-9.17 FlowSsh: Bitvise SSH Server (WinSSHD) 9.17"
+    condition: all of selection_*
 falsepositives:
-  - Unknown
+    - Unknown
 level: high
 tags:
-  - attack.command_and_control
-  - attack.t1572
+    - attack.command_and_control
+    - attack.t1572

@@ -12,10 +12,10 @@ logsource:
     category: image_load
     product: windows
 detection:
-    selection1:
+    selection:
         ImageLoaded|contains: '\Temp\ns'
         ImageLoaded|endswith: '.tmp\System.dll'
-    condition: selection1
+    condition: selection
 falsepositives:
     - Legitimate NSIS installers (e.g., Razer Chroma, Pulse Secure, ...)
 level: low

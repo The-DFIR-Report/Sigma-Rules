@@ -16,15 +16,13 @@ logsource:
     category: process_creation
 detection:
     selection:
-      Image|endswith: 
-        - 'schtasks.exe'
-      CommandLine|contains: 
-        - '/create '
-    filter:
-      CommandLine|contains:
-        - 'regsvr32.exe'
-        - 'rundll32.exe'
-    condition: selection and 1 of filter
+      Image|endswith: 'schtasks.exe'
+      CommandLine|contains: '/create '
+    filter_1:
+        CommandLine|contains:
+            - 'regsvr32.exe'
+            - 'rundll32.exe'
+    condition: selection and 1 of filter_*
 falsepositives:
     - Administrative activity
     - Software installation

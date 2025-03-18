@@ -8,8 +8,8 @@ references:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object.html
     - https://docs.aws.amazon.com/cli/v1/userguide/cli-services-s3-commands.html
 author: TheDFIRReport, MahirAli Khan (in/mahiralikhan)
-date: 2024/03/22
-modified: 2024/10/12
+date: 2024-03-22
+modified: 2024-10-12
 tags:
     - attack.exfiltration
     - attack.t1567.002
