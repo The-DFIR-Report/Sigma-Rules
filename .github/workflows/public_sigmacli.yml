@@ -28,7 +28,7 @@ jobs:
         run: python -m pipx install sigma-cli
       # Install Sigma-cli plugins
       - name: Sigmacli Plugins
-        run: sigma plugin install splunk microsoft365defender sysmon elasticsearch
+        run: sigma plugin install splunk kusto elasticsearch sysmon
       # Install jq tool
       - name: Install jq
         run: sudo apt-get install jq -y
@@ -49,7 +49,17 @@ jobs:
         run: git show --name-only | grep "rules" | xargs  sigma convert -t splunk  -p splunk_windows 
       # Run Conversion for MDATP
       - name: MDATP Rule Conversion
-        run: git show --name-only | grep "rules" | xargs  sigma convert -t microsoft_defender -p microsoft_365_defender
+      #  run: git show --name-only | grep "rules" | xargs  sigma convert -t microsoft_defender -p microsoft_365_defender
+        run: |
+            for file in $(git show --name-only | grep "rules/sigma/windows"); do
+                EXCLUSIONS="builtin|create_remote_thread|dns_query|pipe_created|powershell_module|powershell_script|process_access|proc_creation_win_bcedit|image_load|create_stream_hash|net_connection|correlation"
+                echo $file
+                if [[ $(echo $file | grep -E -c "$EXCLUSIONS") -gt 0 ]];then
+                   echo "Excluded $file for incompatible rule sections."
+                else
+                   sigma convert -t kusto -p microsoft_365_defender $file
+                fi
+            done
       # Run Conversion for Qradar **Currently plugin is broke with latest sigmacli
 #      - name: Qradar Rule Conversion
 #        run: git show --name-only | grep "rules/sigma" | xargs  sigma convert -t -p
