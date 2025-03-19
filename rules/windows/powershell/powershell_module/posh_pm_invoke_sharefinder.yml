@@ -1,25 +1,27 @@
-title: Invoke-ShareFinder Discovery Activity
+title: Invoke-ShareFinder Module Load Detection
 id: fbedfe8c-3e02-4f3c-b521-4b83d5054fd1
 status: experimental
 description: |
     Use of Invoke-ShareFinder detected via PowerShell logging
 references:
-    - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares
+    - https://thedfirreport.com/2023-01-23/sharefinder-how-threat-actors-discover-file-shares
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
-author: TheDFIRReport
+
+author: "The DFIR Report"
 date: 2023-01-22
-modified: 2024-02-23
+modified: 2022-02-07
 tags:
     - attack.discovery
     - attack.t1135
+    - dist.public
 logsource:
     product: windows
     category: ps_module
     definition: 'Requirements: PowerShell Module Logging must be enabled'
 detection:
-    selection:
+    selection_4103:
         Payload|contains: 'Invoke-ShareFinder'
-    condition: selection
+    condition: selection_4103
 falsepositives:
     - Unknown
-level: High
+level: high

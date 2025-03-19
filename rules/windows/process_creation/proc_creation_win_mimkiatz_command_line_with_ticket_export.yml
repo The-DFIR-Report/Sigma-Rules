@@ -8,7 +8,7 @@ references:
     - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
     - https://github.com/Neo23x0/sigma/blob/master/rules/windows/process_creation/win_mimikatz_command_line.yml
 tags:
-    - attack.credential_access
+    - attack.credential-access
     - attack.t1003
     - attack.t1003.001
     - attack.t1003.002

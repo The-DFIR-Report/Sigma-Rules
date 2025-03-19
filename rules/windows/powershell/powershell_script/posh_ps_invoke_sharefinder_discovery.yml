@@ -1,17 +1,19 @@
-title: Invoke-ShareFinder Discovery Activity
+title: Invoke-ShareFinder Script Block Execution
 id: 5e93e240-5484-458a-9663-18157e01e897
 status: experimental
 description: |
     Use of Invoke-ShareFinder detected via PowerShell Script Block logging
 references:
-    - https://thedfirreport.com/2023/01/23/sharefinder-how-threat-actors-discover-file-shares/
+    - https://thedfirreport.com/2023-01-23/sharefinder-how-threat-actors-discover-file-shares/
     - https://powersploit.readthedocs.io/en/stable/Recon/README/
-author: TheDFIRReport
+
+author: "The DFIR Report"
 date: 2023-01-23
-modified: 2024-02-23
+modified: 2025-02-07
 tags:
     - attack.discovery
     - attack.t1135
+    - dist.public
 logsource:
     product: windows
     service: powershell
@@ -22,4 +24,4 @@ detection:
     condition: selection
 falsepositives:
     - Unknown
-level: High
+level: high

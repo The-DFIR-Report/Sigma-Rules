@@ -24,5 +24,5 @@ falsepositives:
     - Unknown
 level: high
 tags:
-    - attack.defense_evasion
+    - attack.defense-evasion
     - attack.t1218.005

@@ -10,7 +10,7 @@ references:
 author: _pete_0, TheDFIRReport
 date: 2024-02-13
 tags:
-    - attack.defense_evasion
+    - attack.defense-evasion
     - attack.t1059
     - dist.public
 logsource:
