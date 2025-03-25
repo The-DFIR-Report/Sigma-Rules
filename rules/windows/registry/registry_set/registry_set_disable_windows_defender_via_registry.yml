@@ -1,0 +1,29 @@
+title: Disable Windows Defender Via Registry Modification
+id: 57f23076-3ae5-4d89-b357-d73caccc8b8c
+status: experimental
+description: Detects attempts to disable Windows Defender by modifying the DisableAntiSpyware registry key. This is a common technique used by malware to disable security controls.
+author: "The DFIR Report"
+references:
+    - https://intel.thedfirreport.com/events/view/29916
+date: 2025-03-26
+tags:
+    - attack.defense-evasion
+    - attack.t1562.001
+    - dist.private
+logsource:
+    category: registry_set
+    product: windows
+detection:
+    selection_registry:
+        TargetObject|contains|all:
+            - '\SOFTWARE\Policies\Microsoft\Windows Defender'
+            - 'DisableAntiSpyware'
+        Details: 
+            - 'DWORD (0x00000001)'
+            - '0x00000001'
+            - '1'
+    condition: selection_registry
+falsepositives:
+    - Legitimate administrative actions to disable Windows Defender
+    - System management software that manages security settings
+level: high

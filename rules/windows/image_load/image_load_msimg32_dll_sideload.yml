@@ -1,0 +1,29 @@
+title: MSIMG32 DLL Sideloading
+id: ee580691-2131-4b8d-9a8f-a68ee3b234ac
+status: experimental
+description: Detects potential DLL sideloading of msimg32.dll when loaded from suspicious locations outside of legitimate Windows system directories
+author: "The DFIR Report"
+references:
+    - https://intel.thedfirreport.com/events/view/29916
+date: 2025-03-26
+tags:
+    - attack.defense-evasion
+    - attack.persistence
+    - attack.privilege-escalation
+    - attack.t1574.002
+    - dist.private
+logsource:
+    category: image_load
+    product: windows
+detection:
+    selection:
+        ImageLoaded|endswith: '\msimg32.dll'
+    filter_main:
+        ImageLoaded|startswith:
+            - 'C:\Windows\System32\'
+            - 'C:\Windows\SysWOW64\'
+    condition: selection and not filter_main
+falsepositives:
+    - Some legitimate applications may load msimg32.dll from their own directories
+    - Software installers that temporarily extract and load DLLs
+level: high 
