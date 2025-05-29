@@ -1,4 +1,6 @@
 # Sigma-Rules
-Rules generated from our investigations.
+Rules generated from our investigations are now directly comtributed to the [SigmaHQ project](https://github.com/SigmaHQ/sigma). 
 
-If you would like to use these rules in a commercial or closed source solution, please contact us at https://thedfirreport.com/contact/.
+You can find rules related to our reports using the [following search](https://github.com/search?q=repo%3ASigmaHQ%2Fsigma+%22TheDFIRReport%22+path%3Arules&type=code).
+
+We also have a [private Sigma ruleset](https://thedfirreport.com/services/detection-rules/) for customers, if you are interested in a demo or access to the private rules please contact us at https://thedfirreport.com/contact/.
