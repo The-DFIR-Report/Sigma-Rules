@@ -1,5 +1,5 @@
 # Sigma-Rules
-Rules generated from our public reports are now directly contributed to the [SigmaHQ project](https://github.com/SigmaHQ/sigma). 
+Rules generated from our public reports are now directly contributed to the SigmaHQ project. 
 
 You can find rules related to our reports using the [following search](https://github.com/search?q=repo%3ASigmaHQ%2Fsigma+%22TheDFIRReport%22+path%3Arules&type=code).
 
